@@ -120,8 +120,6 @@
   <main id="contenu">
 
     <section id="hero" aria-labelledby="hero-title">
-      <div class="hero-grid-bg" aria-hidden="true"></div>
-
       <div class="hero-left">
         <div class="avail"><span class="pulse" aria-hidden="true"></span> Disponible maintenant</div>
         <div class="hero-eyebrow">Ingénieur DevOps &amp; Développeur Full Stack</div>
@@ -159,12 +157,24 @@
       </div>
 
       <div class="hero-right">
+        <!-- Canvas global pour la scène 3D type MinIO -->
         <div class="scene-wrap" aria-hidden="true">
           <canvas id="scene"></canvas>
         </div>
-        <div class="photo-wrapper">
-          <img src="joel.jpg" width="768" height="1020" fetchpriority="high"
-            alt="Portrait de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack et ingénieur DevOps" />
+
+        <!-- Cadre Profil Pro -->
+        <div class="photo-container-pro" id="photoProContainer">
+          <div class="photo-tech-border"></div>
+          <div class="photo-wrapper">
+            <img src="joel.jpg" width="768" height="1020" fetchpriority="high"
+              alt="Portrait de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack et ingénieur DevOps" />
+          </div>
+          <div class="pro-badge badge-top-left">
+            <span class="dot-online"></span> Expert
+          </div>
+          <div class="pro-badge badge-bottom-right">
+            <span class="material-symbols-outlined">verified</span> Full Stack & DevOps
+          </div>
         </div>
       </div>
 
@@ -198,72 +208,55 @@
       </div>
     </section>
 
-    <section id="skills" aria-labelledby="skills-title">
-      <div class="section-tag reveal">Ce que je maîtrise</div>
-      <h2 class="section-h reveal" id="skills-title">Mes <span>Compétences</span></h2>
+    <section id="skills" style="padding: 4rem 0;" aria-labelledby="skills-title">
+      <div class="section-tag reveal" style="text-align: center; margin-bottom: 0.5rem;">Savoir-Faire</div>
+      <h2 class="section-h reveal" id="skills-title" style="text-align: center; margin-bottom: 3.5rem;">Mes
+        <span>Compétences</span>
+      </h2>
 
-      <div class="skills-wrap">
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">web</span></div>
-          </div>
-          <h3 class="sk-name">Développement Web</h3>
-          <p class="sk-sub">Interfaces modernes et responsive</p>
-          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
-              class="tag">JavaScript</span><span class="tag">React JS</span><span class="tag">Vite</span></div>
-        </article>
+      <!-- Timeline des Compétences -->
+      <div class="timeline-container reveal">
+        <div class="timeline-line"></div>
 
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">dns</span></div>
+        <!-- Domaine 1 : Développement Web -->
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Front-End &amp; Frameworks</span>
+            <h3 class="timeline-title">Développement Web</h3>
+            <p class="timeline-sub">React JS, Vite, HTML5, CSS3, JavaScript (ES6+)</p>
           </div>
-          <h3 class="sk-name">Backend &amp; API REST</h3>
-          <p class="sk-sub">Architectures serveur et services web</p>
-          <div class="tags"><span class="tag">Node.js</span><span class="tag">Express JS</span><span
-              class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Python</span><span
-              class="tag">Django</span></div>
-        </article>
+        </div>
 
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">database</span></div>
+        <!-- Domaine 2 : Backend & API -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Serveur &amp; Architecture</span>
+            <h3 class="timeline-title">Backend &amp; API REST</h3>
+            <p class="timeline-sub">Node.js, Express, Python (Django), PHP (Laravel)</p>
           </div>
-          <h3 class="sk-name">Bases de données</h3>
-          <p class="sk-sub">Conception, traitement et exploitation</p>
-          <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span
-              class="tag">SQLite</span></div>
-        </article>
+        </div>
 
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">smartphone</span></div>
+        <!-- Domaine 3 : DevOps & Cloud -->
+        <div class="timeline-item left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Automatisation &amp; Conteneurs</span>
+            <h3 class="timeline-title">DevOps &amp; CI/CD</h3>
+            <p class="timeline-sub">Docker, Jenkins, Linux (Kali/Ubuntu), Prometheus, cAdvisor</p>
           </div>
-          <h3 class="sk-name">Applications mobiles</h3>
-          <p class="sk-sub">Android et cross-platform</p>
-          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span
-              class="tag">Java</span><span class="tag">Android Studio</span></div>
-        </article>
+        </div>
 
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">deployed_code</span></div>
+        <!-- Domaine 4 : Mobile & Bases de Données -->
+        <div class="timeline-item right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">Mobile &amp; Stockage</span>
+            <h3 class="timeline-title">Applications Mobile &amp; BDD</h3>
+            <p class="timeline-sub">Flutter, Dart, PostgreSQL, MySQL, SQLite</p>
           </div>
-          <h3 class="sk-name">DevOps &amp; CI/CD</h3>
-          <p class="sk-sub">Conteneurisation, monitoring et automatisation</p>
-          <div class="tags"><span class="tag">Docker</span><span class="tag">Jenkins</span><span
-              class="tag">Prometheus</span><span class="tag">cAdvisor</span><span class="tag">Git / GitHub</span><span
-              class="tag">Linux</span></div>
-        </article>
-
-        <article class="sk-card tilt reveal">
-          <div class="sk-top">
-            <div class="sk-icon"><span class="material-symbols-outlined">analytics</span></div>
-          </div>
-          <h3 class="sk-name">Gestion des données</h3>
-          <p class="sk-sub">Du recueil à l'exploitation</p>
-          <div class="tags"><span class="tag">Conception</span><span class="tag">Traitement</span><span
-              class="tag">Exploitation</span><span class="tag">Outils bureautiques</span></div>
-        </article>
+        </div>
       </div>
     </section>
 

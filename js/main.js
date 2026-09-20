@@ -41,6 +41,31 @@
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.p-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    // On vérifie que les éléments existent sur la page actuelle (ex: projets.html)
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filterValue === 'all' || (categories && categories.includes(filterValue))) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    }
+});
   /* ---------- Texte qui s'écrit ---------- */
   function initTyped() {
     const el = document.getElementById('typed');
@@ -103,6 +128,27 @@
     });
   }
 
+  /* ---------- Tilt 3D Spécifique pour la Photo Pro ---------- */
+  function initPhotoTilt() {
+    const container = document.getElementById('photoProContainer');
+    if (!container || reduceMotion || !finePointer) return;
+
+    container.addEventListener('pointermove', (e) => {
+      const r = container.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      
+      const rx = (-py * 14).toFixed(2);
+      const ry = (px * 14).toFixed(2);
+      
+      container.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    container.addEventListener('pointerleave', () => {
+      container.style.transform = '';
+    });
+  }
+
   /* ---------- Filtres des projets ---------- */
   function initFilters() {
     const chips = document.querySelectorAll('[data-filter]');
@@ -124,7 +170,7 @@
     });
   }
 
-  /* ---------- Scène 3D (Three.js) ---------- */
+  /* ---------- SCÈNE 3D MINIO LOGIN ---------- */
   function initScene() {
     const canvas = document.getElementById('scene');
     if (!canvas || !window.THREE) return;
@@ -143,124 +189,78 @@
     const COLORS = { gold: 0xf0c060, sky: 0x2979ff, glow: 0x5ca8ff, frost: 0xb8d9ff };
     const FOV = 45;
     const CAM_Z = 12;
-    const MAX_R = 3.6;
 
     const scene = new T.Scene();
     const camera = new T.PerspectiveCamera(FOV, 1, 0.1, 100);
     camera.position.z = CAM_Z;
 
-    const root = new T.Group();   // placé sur la photo et mis à l'échelle
-    const tilt = new T.Group();   // réagit à la souris
+    const root = new T.Group();
     scene.add(root);
-    root.add(tilt);
 
-    /* Particules */
-    const COUNT = 260;
-    const positions = new Float32Array(COUNT * 3);
-    for (let i = 0; i < COUNT; i++) {
-      const r = 4.2 + Math.random() * 3.2;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos(2 * Math.random() - 1);
-      positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-      positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-      positions[i * 3 + 2] = r * Math.cos(phi);
+    /* 1. Réseau de nœuds 3D interconnectés style MinIO Server */
+    const nodeCount = 45;
+    const nodes = [];
+    const nodePositions = new Float32Array(nodeCount * 3);
+    
+    for (let i = 0; i < nodeCount; i++) {
+      const x = (Math.random() - 0.5) * 16;
+      const y = (Math.random() - 0.5) * 10;
+      const z = (Math.random() - 0.5) * 8;
+      nodes.push({ x, y, z, vx: (Math.random() - 0.5) * 0.008, vy: (Math.random() - 0.5) * 0.008 });
+      nodePositions[i * 3] = x;
+      nodePositions[i * 3 + 1] = y;
+      nodePositions[i * 3 + 2] = z;
     }
+
     const pGeo = new T.BufferGeometry();
-    pGeo.setAttribute('position', new T.BufferAttribute(positions, 3));
-    const particles = new T.Points(pGeo, new T.PointsMaterial({
-      color: COLORS.glow, size: 0.05, transparent: true, opacity: 0.75, depthWrite: false
-    }));
-    tilt.add(particles);
+    pGeo.setAttribute('position', new T.BufferAttribute(nodePositions, 3));
+    const pMat = new T.PointsMaterial({
+      color: COLORS.glow,
+      size: 0.12,
+      transparent: true,
+      opacity: 0.85
+    });
+    const pointCloud = new T.Points(pGeo, pMat);
+    root.add(pointCloud);
 
-    /* Formes filaires flottantes */
-    const wire = (geo, color, opacity) => new T.Mesh(
-      geo, new T.MeshBasicMaterial({ color, wireframe: true, transparent: true, opacity })
-    );
-    const shapes = [
-      { mesh: wire(new T.IcosahedronGeometry(0.6, 0), COLORS.gold, 0.85), pos: [2.9, 2.3, -1.0], spin: [0.5, 0.7] },
-      { mesh: wire(new T.OctahedronGeometry(0.55, 0), COLORS.sky, 0.9), pos: [-3.1, -1.7, 0.8], spin: [0.6, -0.5] },
-      { mesh: wire(new T.TorusKnotGeometry(0.42, 0.13, 90, 12), COLORS.frost, 0.7), pos: [3.1, -1.5, 1.0], spin: [0.35, 0.55] },
-      { mesh: wire(new T.TetrahedronGeometry(0.45, 0), COLORS.glow, 0.85), pos: [-2.7, 2.6, 0.4], spin: [-0.4, 0.6] }
-    ];
-    shapes.forEach((s) => { s.mesh.position.set(...s.pos); tilt.add(s.mesh); });
+    /* Lignes de connexion réseau dynamic */
+    const lineGeo = new T.BufferGeometry();
+    const lineMat = new T.LineBasicMaterial({
+      color: COLORS.sky,
+      transparent: true,
+      opacity: 0.25
+    });
+    const lineMesh = new T.LineSegments(lineGeo, lineMat);
+    root.add(lineMesh);
 
-    /* Anneaux orbitaux + étiquettes de technologies */
-    const ringDefs = [
-      { r: 3.3, color: COLORS.gold, tx: 1.15, tz: 0.2, speed: 0.22, labels: ['React', 'Node.js', 'Docker', 'Python'] },
-      { r: 3.0, color: COLORS.sky, tx: -0.9, tz: -0.5, speed: -0.28, labels: ['Flutter', 'PostgreSQL', 'Jenkins'] },
-      { r: 3.6, color: COLORS.frost, tx: 0.35, tz: 0.9, speed: 0.16, labels: ['Laravel', 'Django', 'Git', 'Prometheus'] }
-    ];
-    const rings = [];
-    const sprites = [];
+    /* 2. Cubes de stockage MinIO flottants en 3D */
+    const cubes = [];
+    const cubeGroup = new T.Group();
+    root.add(cubeGroup);
 
-    const hex = (n) => '#' + n.toString(16).padStart(6, '0');
-    const roundRect = (g, x, y, w, h, r) => {
-      g.beginPath();
-      g.moveTo(x + r, y);
-      g.arcTo(x + w, y, x + w, y + h, r);
-      g.arcTo(x + w, y + h, x, y + h, r);
-      g.arcTo(x, y + h, x, y, r);
-      g.arcTo(x, y, x + w, y, r);
-      g.closePath();
-    };
-    const makeLabel = (text, color) => {
-      const c = document.createElement('canvas');
-      c.width = 320; c.height = 96;
-      const g = c.getContext('2d');
-      roundRect(g, 6, 6, 308, 84, 42);
-      g.fillStyle = 'rgba(7, 30, 61, 0.9)';
-      g.fill();
-      g.lineWidth = 3;
-      g.strokeStyle = hex(color);
-      g.stroke();
-      g.fillStyle = hex(color);
-      g.beginPath(); g.arc(46, 48, 9, 0, Math.PI * 2); g.fill();
-      g.fillStyle = '#eaf3ff';
-      g.font = '600 34px Outfit, "Segoe UI", Arial, sans-serif';
-      g.textBaseline = 'middle';
-      g.fillText(text, 72, 50);
-      const tex = new T.CanvasTexture(c);
-      tex.anisotropy = 4;
-      const spr = new T.Sprite(new T.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
-      spr.scale.set(1.8, 0.54, 1);
-      return spr;
-    };
-
-    const buildRings = () => {
-      ringDefs.forEach((def) => {
-        const pivot = new T.Group();
-        pivot.rotation.set(def.tx, 0, def.tz);
-        const spinner = new T.Group();
-        pivot.add(spinner);
-
-        const torus = new T.Mesh(
-          new T.TorusGeometry(def.r, 0.012, 8, 180),
-          new T.MeshBasicMaterial({ color: def.color, transparent: true, opacity: 0.55 })
-        );
-        spinner.add(torus);
-
-        const comet = new T.Mesh(
-          new T.SphereGeometry(0.09, 16, 16),
-          new T.MeshBasicMaterial({ color: def.color })
-        );
-        comet.position.set(def.r, 0, 0);
-        spinner.add(comet);
-
-        def.labels.forEach((text, i) => {
-          const a = (i / def.labels.length) * Math.PI * 2 + 0.6;
-          const spr = makeLabel(text, def.color);
-          spr.position.set(Math.cos(a) * def.r, Math.sin(a) * def.r, 0);
-          spinner.add(spr);
-          sprites.push(spr);
-        });
-
-        tilt.add(pivot);
-        rings.push({ spinner, speed: def.speed });
+    for (let i = 0; i < 8; i++) {
+      const geo = new T.BoxGeometry(0.5, 0.5, 0.5);
+      const mat = new T.MeshBasicMaterial({
+        color: i % 2 === 0 ? COLORS.gold : COLORS.sky,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.5
       });
-    };
+      const mesh = new T.Mesh(geo, mat);
+      mesh.position.set(
+        (Math.random() - 0.5) * 12,
+        (Math.random() - 0.5) * 8,
+        (Math.random() - 0.5) * 6
+      );
+      cubeGroup.add(mesh);
+      cubes.push({
+        mesh,
+        rotX: (Math.random() - 0.5) * 0.02,
+        rotY: (Math.random() - 0.5) * 0.02
+      });
+    }
 
-    /* Dimensionnement : centré sur la photo */
-    const photo = document.querySelector('.photo-wrapper');
+    /* Redimensionnement */
     const layout = () => {
       const rect = canvas.getBoundingClientRect();
       const w = Math.max(1, rect.width);
@@ -268,95 +268,68 @@
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
-
-      const ppu = h / (2 * Math.tan(T.MathUtils.degToRad(FOV / 2)) * CAM_Z);
-      let cx = w / 2, cy = h / 2, pw = 300;
-      if (photo) {
-        const pr = photo.getBoundingClientRect();
-        cx = pr.left + pr.width / 2 - rect.left;
-        cy = pr.top + pr.height / 2 - rect.top;
-        pw = pr.width;
-      }
-      // 0.78 : marge pour que les étiquettes ne soient pas coupées sur les bords
-      const R = Math.min(pw * 0.8, Math.min(cx, w - cx) * 0.78, cy * 0.98);
-      root.scale.setScalar(R / (MAX_R * ppu));
-      root.position.set((cx - w / 2) / ppu, -(cy - h / 2) / ppu, 0);
     };
 
     layout();
-    if ('ResizeObserver' in window) {
-      const ro = new ResizeObserver(layout);
-      ro.observe(canvas);
-      if (photo) ro.observe(photo);
-    } else {
-      window.addEventListener('resize', layout);
-    }
-    window.addEventListener('load', layout);
+    window.addEventListener('resize', layout);
 
-    /* Souris */
-    let mx = 0, my = 0, rx = 0, ry = 0;
+    /* Interaction Souris */
+    let mx = 0, my = 0;
     window.addEventListener('pointermove', (e) => {
-      mx = (e.clientX / window.innerWidth) * 2 - 1;
-      my = (e.clientY / window.innerHeight) * 2 - 1;
+      mx = (e.clientX / window.innerWidth - 0.5) * 0.8;
+      my = (e.clientY / window.innerHeight - 0.5) * 0.8;
     }, { passive: true });
 
-    /* Boucle d'animation */
+    /* Boucle d'animation MinIO */
     const clock = new T.Clock();
-    const v = new T.Vector3();
     let raf = 0;
-    let running = false;
 
-    const frame = () => {
-      const dt = Math.min(clock.getDelta(), 0.05);
-      const t = clock.elapsedTime;
+    const animate = () => {
+      const dt = clock.getDelta();
+      
+      // Animation douce de la caméra / scène
+      root.rotation.y += (mx - root.rotation.y) * 0.05;
+      root.rotation.x += (my - root.rotation.x) * 0.05;
 
-      rx += (my * 0.3 - rx) * 0.05;
-      ry += (mx * 0.45 - ry) * 0.05;
-      tilt.rotation.y = ry + Math.sin(t * 0.3) * 0.08;
-      tilt.rotation.x = rx * 0.8 + Math.cos(t * 0.25) * 0.05;
+      // Mise à jour des positions des nœuds
+      const linePositions = [];
+      const posAttr = pointCloud.geometry.attributes.position;
 
-      rings.forEach((r) => { r.spinner.rotation.z += r.speed * dt; });
-      shapes.forEach((s) => {
-        s.mesh.rotation.x += s.spin[0] * dt;
-        s.mesh.rotation.y += s.spin[1] * dt;
-        s.mesh.position.y = s.pos[1] + Math.sin(t * 0.8 + s.pos[0]) * 0.12;
-      });
-      particles.rotation.y = t * 0.03;
+      for (let i = 0; i < nodeCount; i++) {
+        const n = nodes[i];
+        n.x += n.vx;
+        n.y += n.vy;
 
-      const depthRange = MAX_R * root.scale.x;
-      sprites.forEach((spr) => {
-        spr.getWorldPosition(v);
-        const d = (v.z - root.position.z) / depthRange;
-        spr.material.opacity = 0.45 + 0.55 * (d * 0.5 + 0.5);
+        if (Math.abs(n.x) > 8) n.vx *= -1;
+        if (Math.abs(n.y) > 5) n.vy *= -1;
+
+        posAttr.setXYZ(i, n.x, n.y, n.z);
+
+        // Connexions entre nœuds proches
+        for (let j = i + 1; j < nodeCount; j++) {
+          const n2 = nodes[j];
+          const dist = Math.hypot(n.x - n2.x, n.y - n2.y, n.z - n2.z);
+          if (dist < 3.2) {
+            linePositions.push(n.x, n.y, n.z);
+            linePositions.push(n2.x, n2.y, n2.z);
+          }
+        }
+      }
+
+      posAttr.needsUpdate = true;
+      lineGeo.setAttribute('position', new T.Float32BufferAttribute(linePositions, 3));
+
+      // Animation des cubes
+      cubes.forEach((c) => {
+        c.mesh.rotation.x += c.rotX;
+        c.mesh.rotation.y += c.rotY;
       });
 
       renderer.render(scene, camera);
-      if (running) raf = requestAnimationFrame(frame);
+      if (!reduceMotion) raf = requestAnimationFrame(animate);
     };
 
-    const start = () => {
-      if (running || reduceMotion) return;
-      running = true;
-      clock.getDelta();
-      raf = requestAnimationFrame(frame);
-    };
-    const stop = () => { running = false; cancelAnimationFrame(raf); };
-
-    const ready = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
-    ready.then(() => {
-      buildRings();
-      layout();
-      frame();           // premier rendu (image fixe si mouvement réduit)
-      start();
-    });
-
-    const hero = document.getElementById('hero');
-    if (hero && 'IntersectionObserver' in window) {
-      new IntersectionObserver((entries) => {
-        entries[0].isIntersecting ? start() : stop();
-      }, { threshold: 0.05 }).observe(hero);
-    }
-    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+    animate();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -365,6 +338,7 @@
     initTyped();
     initCounters();
     initTilt();
+    initPhotoTilt();
     initFilters();
     initScene();
   });
