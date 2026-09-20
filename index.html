@@ -5,17 +5,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <title>Joël Ferdinand — Développeur Full Stack &amp; Ingénieur DevOps à Fianarantsoa, Madagascar</title>
+  <!-- SEO & INDEXATION OPTIMISÉS -->
+  <title>Joël Ferdinand — Développeur Full Stack &amp; Ingénieur DevOps</title>
   <meta name="description"
-    content="Portfolio de Joël Ferdinand Nahandrisoaniaina, ingénieur DevOps et développeur Full Stack Web &amp; Mobile à Fianarantsoa, Madagascar. React, Node.js, Docker, Flutter." />
+    content="Portfolio officiel de Joël Ferdinand Nahandrisoaniaina, ingénieur DevOps et développeur Full Stack Web &amp; Mobile à Fianarantsoa, Madagascar." />
   <meta name="keywords"
-    content="Joël Ferdinand, Nahandrisoaniaina, développeur Full Stack Madagascar, ingénieur DevOps Fianarantsoa, développeur web, développeur mobile Flutter, React.js, Node.js, Docker, Jenkins, CI/CD, Laravel, Django, PostgreSQL, portfolio développeur, ENI Fianarantsoa" />
+    content="Joël Ferdinand, Nahandrisoaniaina, Joël Ferdinand Nahandrisoaniaina, développeur Full Stack Madagascar, ingénieur DevOps Fianarantsoa, développeur web, développeur mobile Flutter, React.js, Node.js, Docker, Jenkins, CI/CD, ENI Fianarantsoa" />
   <meta name="author" content="Joël Ferdinand Nahandrisoaniaina" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#04111f" />
   <link rel="canonical" href="https://joel-ferdinand-jf.vercel.app/" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- OPTIMISATION VITESSE DE CHARGEMENT (PERFORMANCE & LCP) -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload critique de l'image principale pour un LCP rapide -->
+  <link rel="preload" as="image" href="joel.jpg" type="image/jpeg" fetchpriority="high" />
+
+  <!-- Chargement non bloquant des polices Google Fonts (display=swap) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet" />
+    <style>
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </noscript>
+
+  <link rel="stylesheet" href="css/style.css" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
@@ -32,7 +66,7 @@
     content="Portfolio : projets web, mobile et DevOps (React, Node.js, Docker, Jenkins, Flutter)." />
   <meta name="twitter:image" content="https://joel-ferdinand-jf.vercel.app/joel.jpg" />
 
-  <!-- Données structurées -->
+  <!-- DONNÉES STRUCTURÉES (SCHEMA.ORG) ENRICHIES -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,34 +97,25 @@
         "knowsLanguage": ["fr", "en"]
       },
       {
+        "@type": "WebPage",
+        "@id": "https://joel-ferdinand-jf.vercel.app/",
+        "url": "https://joel-ferdinand-jf.vercel.app/",
+        "name": "Joël Ferdinand — Développeur Full Stack & Ingénieur DevOps",
+        "isPartOf": { "@id": "https://joel-ferdinand-jf.vercel.app/#site" },
+        "about": { "@id": "https://joel-ferdinand-jf.vercel.app/#joel" },
+        "description": "Portfolio officiel de Joël Ferdinand Nahandrisoaniaina"
+      },
+      {
         "@type": "WebSite",
         "@id": "https://joel-ferdinand-jf.vercel.app/#site",
         "url": "https://joel-ferdinand-jf.vercel.app/",
         "name": "Joël Ferdinand — Portfolio",
         "inLanguage": "fr",
-        "author": { "@id": "https://joel-ferdinand-jf.vercel.app/#joel" }
+        "publisher": { "@id": "https://joel-ferdinand-jf.vercel.app/#joel" }
       }
     ]
   }
   </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    rel="stylesheet" />
-  <link rel="preload" as="image" href="joel.jpg" />
-  <link rel="stylesheet" href="css/style.css" />
-  <noscript>
-    <style>
-      .reveal {
-        opacity: 1;
-        transform: none
-      }
-    </style>
-  </noscript>
 </head>
 
 <body>
@@ -166,14 +191,11 @@
         <div class="photo-container-pro" id="photoProContainer">
           <div class="photo-tech-border"></div>
           <div class="photo-wrapper">
-            <img src="joel.jpg" width="768" height="1020" fetchpriority="high"
+            <img src="joel.jpg" width="768" height="1020" fetchpriority="high" decoding="async"
               alt="Portrait de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack et ingénieur DevOps" />
           </div>
-          <!-- <div class="pro-badge badge-top-left">
-            <span class="dot-online"></span> Expert
-          </div> -->
           <div class="pro-badge badge-bottom-right">
-            <span class="material-symbols-outlined">verified</span> Full Stack & DevOps
+            <span class="material-symbols-outlined">verified</span> Full Stack &amp; DevOps
           </div>
         </div>
       </div>
