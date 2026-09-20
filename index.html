@@ -4,11 +4,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joël Ferdinand — Développeur Full Stack</title>
+
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Joël Ferdinand — Développeur Full Stack Web & Mobile | Portfolio</title>
+  <meta name="title" content="Joël Ferdinand — Développeur Full Stack Web & Mobile | Portfolio" />
+  <meta name="description"
+    content="Portfolio de Nahandrisoaniaina Joël Ferdinand, Développeur Full Stack Web & Mobile (React, Laravel, Flutter, Express JS) basé à Fianarantsoa, Madagascar." />
+  <meta name="keywords"
+    content="Joël Ferdinand, Nahandrisoaniaina, Développeur Full Stack, Développeur Web, Développeur Mobile, React JS, Laravel, Flutter, ENI Fianarantsoa, Madagascar, Portfolio" />
+  <meta name="author" content="Nahandrisoaniaina Joël Ferdinand" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://joel-ferdinand-jf.vercel.app/" />
+  <meta property="og:title" content="Joël Ferdinand — Développeur Full Stack Web & Mobile" />
+  <meta property="og:description"
+    content="Développeur passionné diplômé de l'ENI Fianarantsoa. Découvrez mes projets Web, Mobile et mes compétences techniques." />
+  <meta property="og:image" content="https://joel-ferdinand-jf.vercel.app/joel.jpg" />
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://joel-ferdinand-jf.vercel.app/" />
+  <meta property="twitter:title" content="Joël Ferdinand — Développeur Full Stack Web & Mobile" />
+  <meta property="twitter:description"
+    content="Développeur passionné diplômé de l'ENI Fianarantsoa. Découvrez mes projets Web, Mobile et mes compétences techniques." />
+  <meta property="twitter:image" content="https://joel-ferdinand-jf.vercel.app/joel.jpg" />
+
+  <!-- Structured Data (Schema.org JSON-LD pour Google Search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nahandrisoaniaina Joël Ferdinand",
+    "alternateName": "Joël Ferdinand",
+    "url": "https://joel-ferdinand-jf.vercel.app/",
+    "image": "https://joel-ferdinand-jf.vercel.app/joel.jpg",
+    "jobTitle": "Développeur Full Stack Web & Mobile",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "École Nationale d'Informatique (E.N.I) Fianarantsoa"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Fianarantsoa",
+      "addressCountry": "Madagascar"
+    },
+    "email": "mailto:niainajoelferdinand@gmail.com",
+    "telephone": "+261349845300",
+    "sameAs": [
+      "https://github.com/Joel4268"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet" />
+
   <style>
     :root {
       --ink: #04111f;
@@ -42,6 +104,11 @@
       overflow-x: hidden;
     }
 
+    .material-symbols-outlined {
+      font-size: 1.25rem;
+      vertical-align: middle;
+    }
+
     /* ═══════════════════════════════════════
        NAVBAR
     ═══════════════════════════════════════ */
@@ -56,7 +123,6 @@
       justify-content: space-between;
       padding: 1.4rem 6%;
       background: rgba(4, 17, 31, 0);
-      /* transparent first */
       transition: background 0.4s, padding 0.4s, backdrop-filter 0.4s;
     }
 
@@ -81,6 +147,7 @@
       display: flex;
       gap: 2.2rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
@@ -113,7 +180,7 @@
     }
 
     /* ═══════════════════════════════════════
-       HERO — full viewport split layout
+       HERO
     ═══════════════════════════════════════ */
     #hero {
       min-height: 100vh;
@@ -123,7 +190,6 @@
       overflow: hidden;
     }
 
-    /* Left panel — text */
     .hero-left {
       display: flex;
       flex-direction: column;
@@ -133,7 +199,6 @@
       z-index: 2;
     }
 
-    /* Right panel — image */
     .hero-right {
       position: relative;
       z-index: 1;
@@ -142,7 +207,6 @@
       justify-content: center;
     }
 
-    /* ── Global BG ── */
     #hero::before {
       content: '';
       position: absolute;
@@ -154,7 +218,6 @@
         linear-gradient(155deg, #04111f 0%, #071e3d 50%, #04111f 100%);
     }
 
-    /* diagonal divider */
     .hero-divider {
       position: absolute;
       inset: 0;
@@ -176,7 +239,6 @@
           transparent 100%);
     }
 
-    /* ── Decorative grid lines ── */
     .grid-lines {
       position: absolute;
       inset: 0;
@@ -188,7 +250,6 @@
       background-size: 60px 60px;
     }
 
-    /* ── PHOTO — big, dominant ── */
     .photo-wrapper {
       position: relative;
       width: 440px;
@@ -197,7 +258,6 @@
       margin-bottom: 0;
     }
 
-    /* Outer glow ring */
     .photo-wrapper::before {
       content: '';
       position: absolute;
@@ -218,7 +278,6 @@
       }
     }
 
-    /* Second decorative frame */
     .photo-wrapper::after {
       content: '';
       position: absolute;
@@ -244,7 +303,6 @@
       filter: contrast(1.04) saturate(0.95);
     }
 
-    /* Fallback if no image */
     .photo-wrapper .photo-fallback {
       width: 100%;
       height: 100%;
@@ -253,12 +311,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 7rem;
       position: relative;
       z-index: 1;
     }
 
-    /* Decorative corner accents */
+    .photo-wrapper .photo-fallback span {
+      font-size: 5rem;
+      color: var(--frost);
+    }
+
     .corner {
       position: absolute;
       z-index: 3;
@@ -284,7 +345,6 @@
       border-radius: 0 4px 0 0;
     }
 
-    /* Floating info chips */
     .chip {
       position: absolute;
       z-index: 4;
@@ -330,8 +390,9 @@
       animation-delay: 0.8s;
     }
 
-    .chip-icon {
-      font-size: 1.2rem;
+    .chip-icon span {
+      font-size: 1.5rem;
+      color: var(--gold);
     }
 
     .chip-text {
@@ -350,7 +411,6 @@
       color: var(--frost);
     }
 
-    /* Orbiting dots */
     .orbit {
       position: absolute;
       z-index: 2;
@@ -396,15 +456,14 @@
 
     @keyframes spin {
       from {
-        transform: translate(-50%, -50%) rotate(0)
+        transform: translate(-50%, -50%) rotate(0);
       }
 
       to {
-        transform: translate(-50%, -50%) rotate(360deg)
+        transform: translate(-50%, -50%) rotate(360deg);
       }
     }
 
-    /* ── HERO TEXT ── */
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -521,7 +580,6 @@
       transform: translateY(-2px);
     }
 
-    /* Stats row */
     .hero-stats {
       display: flex;
       gap: 2.5rem;
@@ -549,7 +607,6 @@
       margin-top: 0.25rem;
     }
 
-    /* ── Scroll indicator ── */
     .scroll-hint {
       position: absolute;
       bottom: 2.5rem;
@@ -656,12 +713,19 @@
     .sk-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 1rem;
     }
 
-    .sk-emoji {
-      font-size: 1.6rem;
+    .sk-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(41, 121, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--glow);
     }
 
     .sk-pct {
@@ -749,12 +813,15 @@
     .exp-card-top {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 0.85rem;
       gap: 1rem;
     }
 
     .exp-card-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       font-size: 0.72rem;
       letter-spacing: 2px;
       text-transform: uppercase;
@@ -852,9 +919,20 @@
       box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
     }
 
-    .edu-em {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+    .edu-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(41, 121, 255, 0.15);
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+    }
+
+    .edu-icon span {
+      font-size: 1.8rem;
     }
 
     .edu-d {
@@ -901,12 +979,19 @@
       padding: 2.5rem;
       text-align: center;
       backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .cv-panel h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.7rem;
       margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .cv-panel p {
@@ -928,6 +1013,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.7rem;
       margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .citem {
@@ -958,7 +1046,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      color: var(--glow);
       flex-shrink: 0;
     }
 
@@ -1009,31 +1097,30 @@
 
       0%,
       100% {
-        transform: rotate(0)
+        transform: rotate(0);
       }
 
       8% {
-        transform: rotate(16deg)
+        transform: rotate(16deg);
       }
 
       16% {
-        transform: rotate(-14deg)
+        transform: rotate(-14deg);
       }
 
       24% {
-        transform: rotate(10deg)
+        transform: rotate(10deg);
       }
 
       32% {
-        transform: rotate(-8deg)
+        transform: rotate(-8deg);
       }
 
       40% {
-        transform: rotate(0)
+        transform: rotate(0);
       }
     }
 
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 2rem 6%;
@@ -1042,16 +1129,15 @@
       color: rgba(184, 217, 255, 0.3);
     }
 
-    /* Reveal animations */
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(28px)
+        transform: translateY(28px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0);
       }
     }
 
@@ -1078,7 +1164,7 @@
       transition-delay: 0.3s;
     }
 
-    @media (max-width:900px) {
+    @media (max-width: 900px) {
       #hero {
         grid-template-columns: 1fr;
       }
@@ -1117,9 +1203,9 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <nav id="navbar">
-    <div class="logo">JF.</div>
+    <a href="#" class="logo" style="text-decoration:none;">JF.</a>
     <ul class="nav-links">
       <li><a href="#skills">Compétences</a></li>
       <li><a href="#experience">Projets</a></li>
@@ -1134,7 +1220,6 @@
     <div class="grid-lines"></div>
     <div class="hero-divider"></div>
 
-    <!-- LEFT: text -->
     <div class="hero-left">
       <div class="hero-eyebrow">Développeur Full Stack</div>
 
@@ -1158,10 +1243,10 @@
 
       <div class="hero-actions">
         <a href="tel:+261349845300" class="btn btn-gold">
-          📞 Appeler maintenant
+          <span class="material-symbols-outlined">call</span> Appeler maintenant
         </a>
         <a href="#experience" class="btn btn-ghost">
-          Voir mes projets →
+          Voir mes projets <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
 
@@ -1181,9 +1266,7 @@
       </div>
     </div>
 
-    <!-- RIGHT: photo -->
     <div class="hero-right">
-      <!-- Orbit decoration -->
       <div class="orbit orbit-1">
         <div class="orbit-dot"></div>
       </div>
@@ -1192,35 +1275,39 @@
       </div>
 
       <div class="photo-wrapper">
-        <!-- Corner accents -->
         <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
 
-        <!-- Floating chips -->
         <div class="chip chip-1">
-          <div class="chip-icon">⚛️</div>
+          <div class="chip-icon">
+            <span class="material-symbols-outlined">code</span>
+          </div>
           <div class="chip-text">
             <strong>React JS</strong>
             <span>Full Stack</span>
           </div>
         </div>
         <div class="chip chip-2">
-          <div class="chip-icon">📱</div>
+          <div class="chip-icon">
+            <span class="material-symbols-outlined">smartphone</span>
+          </div>
           <div class="chip-text">
             <strong>Flutter</strong>
             <span>Mobile Dev</span>
           </div>
         </div>
         <div class="chip chip-3">
-          <div class="chip-icon">🎓</div>
+          <div class="chip-icon">
+            <span class="material-symbols-outlined">school</span>
+          </div>
           <div class="chip-text">
             <strong>Master 2</strong>
             <span>En cours · E.N.I</span>
           </div>
         </div>
 
-        <!-- The photo itself -->
-        <img src="joel.jpg" alt="Joël Ferdinand" onerror="this.outerHTML='<div class=\'photo-fallback\'>👤</div>'" />
+        <img src="joel.jpg" alt="Nahandrisoaniaina Joël Ferdinand — Développeur Full Stack"
+          onerror="this.outerHTML='<div class=\'photo-fallback\'><span class=\'material-symbols-outlined\'>person</span></div>'" />
       </div>
     </div>
 
@@ -1238,7 +1325,9 @@
     <div class="skills-wrap">
       <div class="sk-card reveal reveal-delay-1">
         <div class="sk-top">
-          <div class="sk-emoji">⚡</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">bolt</span>
+          </div>
           <div class="sk-pct">80%</div>
         </div>
         <div class="sk-name">HTML · CSS · JavaScript</div>
@@ -1249,7 +1338,9 @@
       </div>
       <div class="sk-card reveal reveal-delay-2">
         <div class="sk-top">
-          <div class="sk-emoji">🔧</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">build</span>
+          </div>
           <div class="sk-pct">80%</div>
         </div>
         <div class="sk-name">Laravel · PHP</div>
@@ -1260,7 +1351,9 @@
       </div>
       <div class="sk-card reveal reveal-delay-3">
         <div class="sk-top">
-          <div class="sk-emoji">⚛️</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">terminal</span>
+          </div>
           <div class="sk-pct">80%</div>
         </div>
         <div class="sk-name">React · Express JS</div>
@@ -1271,7 +1364,9 @@
       </div>
       <div class="sk-card reveal reveal-delay-1">
         <div class="sk-top">
-          <div class="sk-emoji">📱</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">devices</span>
+          </div>
           <div class="sk-pct">80%</div>
         </div>
         <div class="sk-name">Flutter · Dart</div>
@@ -1282,7 +1377,9 @@
       </div>
       <div class="sk-card reveal reveal-delay-2">
         <div class="sk-top">
-          <div class="sk-emoji">🗄️</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">database</span>
+          </div>
           <div class="sk-pct">60%</div>
         </div>
         <div class="sk-name">MySQL · PostgreSQL · Java</div>
@@ -1293,7 +1390,9 @@
       </div>
       <div class="sk-card reveal reveal-delay-3">
         <div class="sk-top">
-          <div class="sk-emoji">🌍</div>
+          <div class="sk-icon">
+            <span class="material-symbols-outlined">language</span>
+          </div>
           <div class="sk-pct">85%</div>
         </div>
         <div class="sk-name">Français · Anglais</div>
@@ -1313,7 +1412,9 @@
     <div class="exp-grid">
       <div class="exp-card reveal reveal-delay-1">
         <div class="exp-card-top">
-          <div class="exp-card-type">🌐 Web</div>
+          <div class="exp-card-type">
+            <span class="material-symbols-outlined">language</span> Web
+          </div>
           <div class="exp-card-date">Oct. – Déc. 2025</div>
         </div>
         <div class="exp-card-title">Plateforme de recherche d'emploi en ligne</div>
@@ -1326,7 +1427,9 @@
 
       <div class="exp-card reveal reveal-delay-2">
         <div class="exp-card-top">
-          <div class="exp-card-type">📱 Mobile</div>
+          <div class="exp-card-type">
+            <span class="material-symbols-outlined">smartphone</span> Mobile
+          </div>
           <div class="exp-card-date">Mars – Mai 2025</div>
         </div>
         <div class="exp-card-title">Application de gestion des salaires professeurs</div>
@@ -1338,7 +1441,9 @@
 
       <div class="exp-card reveal reveal-delay-1">
         <div class="exp-card-top">
-          <div class="exp-card-type">🌐 Web</div>
+          <div class="exp-card-type">
+            <span class="material-symbols-outlined">language</span> Web
+          </div>
           <div class="exp-card-date">Fév. – Avr. 2025</div>
         </div>
         <div class="exp-card-title">Gestion administrative des enseignants</div>
@@ -1351,7 +1456,9 @@
 
       <div class="exp-card reveal reveal-delay-2">
         <div class="exp-card-top">
-          <div class="exp-card-type">📱 Mobile</div>
+          <div class="exp-card-type">
+            <span class="material-symbols-outlined">smartphone</span> Mobile
+          </div>
           <div class="exp-card-date">Août – Nov. 2023</div>
         </div>
         <div class="exp-card-title">Suivi d'emploi du temps étudiant</div>
@@ -1364,7 +1471,9 @@
 
       <div class="exp-card reveal reveal-delay-1" style="grid-column:1/-1">
         <div class="exp-card-top">
-          <div class="exp-card-type">🌐 Web · Institutionnel</div>
+          <div class="exp-card-type">
+            <span class="material-symbols-outlined">account_balance</span> Web · Institutionnel
+          </div>
           <div class="exp-card-date">Août – Nov. 2022</div>
         </div>
         <div class="exp-card-title">Gestion des pavillons — Commune Urbaine d'Ambalavao</div>
@@ -1383,19 +1492,25 @@
     <h2 class="section-h reveal">Éducation & <span>Diplômes</span></h2>
     <div class="edu-row">
       <div class="edu-card reveal reveal-delay-1">
-        <div class="edu-em">🎓</div>
+        <div class="edu-icon">
+          <span class="material-symbols-outlined">school</span>
+        </div>
         <div class="edu-d">Master 2 en Informatique</div>
         <div class="edu-s">E.N.I Fianarantsoa</div>
         <span class="edu-y">En cours</span>
       </div>
       <div class="edu-card reveal reveal-delay-2">
-        <div class="edu-em">📜</div>
+        <div class="edu-icon">
+          <span class="material-symbols-outlined">workspace_premium</span>
+        </div>
         <div class="edu-d">Licence Professionnelle (L3)</div>
         <div class="edu-s">E.N.I Fianarantsoa</div>
         <span class="edu-y">2023 – 2024</span>
       </div>
       <div class="edu-card reveal reveal-delay-3">
-        <div class="edu-em">🏫</div>
+        <div class="edu-icon">
+          <span class="material-symbols-outlined">history_edu</span>
+        </div>
         <div class="edu-d">Baccalauréat Série C</div>
         <div class="edu-s">Lycée Joël Sylvain, Ambalavao</div>
         <span class="edu-y">2020–2021 · Mention AB</span>
@@ -1408,20 +1523,28 @@
     <div class="cv-contact-grid">
 
       <div class="cv-panel reveal">
-        <h3>📄 Mon Curriculum Vitae</h3>
+        <h3>
+          <span class="material-symbols-outlined" style="color: var(--gold);">description</span>
+          Mon Curriculum Vitae
+        </h3>
         <p>Retrouvez l'ensemble de mon parcours, mes compétences techniques et mes réalisations dans mon CV complet
           téléchargeable.</p>
         <a href="CV_Ferdinand.pdf" download="CV_Joel_Ferdinand.pdf" class="btn btn-gold"
           style="margin:0 auto; display:inline-flex;">
-          ⬇️ Télécharger le CV
+          <span class="material-symbols-outlined">download</span> Télécharger le CV
         </a>
       </div>
 
       <div class="contact-panel reveal reveal-delay-2">
-        <h3>✉️ Me Contacter</h3>
+        <h3>
+          <span class="material-symbols-outlined" style="color: var(--sky);">mail</span>
+          Me Contacter
+        </h3>
 
         <a href="mailto:niainajoelferdinand@gmail.com" class="citem">
-          <div class="cico">✉️</div>
+          <div class="cico">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
           <div>
             <div class="clabel">Email</div>
             <div class="cval">niainajoelferdinand@gmail.com</div>
@@ -1429,23 +1552,17 @@
         </a>
 
         <div class="citem">
-          <div class="cico">📍</div>
+          <div class="cico">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
           <div>
             <div class="clabel">Localisation</div>
             <div class="cval">Ampitakely, Fianarantsoa</div>
           </div>
         </div>
 
-        <!-- <a href="https://niainajoelferdinand.netlify.app" target="_blank" class="citem">
-        <div class="cico">🌐</div>
-        <div>
-          <div class="clabel">Portfolio en ligne</div>
-          <div class="cval">Mon Portfolio · Netlify</div>
-        </div>
-      </a> -->
-
         <a href="tel:+261349845300" class="call-btn">
-          <span class="ph">📞</span>
+          <span class="material-symbols-outlined ph">call</span>
           Appeler · 034 98 453 00
         </a>
       </div>
@@ -1453,20 +1570,17 @@
   </section>
 
   <footer>
-    <p>© 2025 <strong>Nahandrisoaniaina Joël Ferdinand</strong> · Développeur Full Stack Web & Mobile · Fianarantsoa,
+    <p>© 2026 <strong>Nahandrisoaniaina Joël Ferdinand</strong> · Développeur Full Stack Web & Mobile · Fianarantsoa,
       Madagascar</p>
   </footer>
 
   <script>
-    // Navbar scroll
     const nb = document.getElementById('navbar');
     window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 60));
 
-    // Reveal on scroll
     const io = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) e.target.classList.add('on');}), {threshold: 0.12});
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Skill bars
     const sio = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
