@@ -8,28 +8,94 @@
     <!-- SEO -->
     <title>Projets — Joël Ferdinand | Web, Mobile &amp; DevOps (React, Node.js, Docker, Flutter)</title>
     <meta name="description"
-        content="Projets de Joël Ferdinand : plateforme de supervision Docker, audit bancaire Django, recherche d'emploi React, applications Flutter et Laravel." />
+        content="Projets de Joël Ferdinand : plateforme de supervision Docker (Prometheus, cAdvisor, Jenkins), audit bancaire Django, recherche d'emploi React, applications Flutter et Laravel." />
+    <meta name="keywords"
+        content="projets développeur Full Stack, plateforme supervision Docker, Prometheus cAdvisor, pipeline CI/CD Jenkins, application Django PostgreSQL, React Express PostgreSQL, application Flutter, Laravel, portfolio Madagascar, code source GitHub" />
     <meta name="author" content="Joël Ferdinand Nahandrisoaniaina" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#04111f" />
     <link rel="canonical" href="https://joel-ferdinand-jf.vercel.app/projets.html" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Joël Ferdinand — Portfolio" />
+    <meta property="og:title" content="Mes projets — Joël Ferdinand" />
+    <meta property="og:description"
+        content="Supervision Docker, CI/CD Jenkins, applications web (React, Django, Laravel) et mobiles (Flutter, Java). Code source sur GitHub." />
+    <meta property="og:url" content="https://joel-ferdinand-jf.vercel.app/projets.html" />
+    <meta property="og:image" content="https://joel-ferdinand-jf.vercel.app/joel.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mes projets — Joël Ferdinand" />
+    <meta name="twitter:description" content="Projets web, mobile et DevOps avec liens vers le code source." />
+    <meta name="twitter:image" content="https://joel-ferdinand-jf.vercel.app/joel.jpg" />
+
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://joel-ferdinand-jf.vercel.app/projets.html",
+        "url": "https://joel-ferdinand-jf.vercel.app/projets.html",
+        "name": "Projets de Joël Ferdinand",
+        "inLanguage": "fr",
+        "author": { "@id": "https://joel-ferdinand-jf.vercel.app/#joel" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://joel-ferdinand-jf.vercel.app/" },
+            { "@type": "ListItem", "position": 2, "name": "Projets", "item": "https://joel-ferdinand-jf.vercel.app/projets.html" }
+          ]
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Plateforme de visualisation et d'optimisation des ressources Docker" },
+            { "@type": "ListItem", "position": 2, "name": "Audit des retraits bancaires" },
+            { "@type": "ListItem", "position": 3, "name": "Plateforme de recherche d'emploi" },
+            { "@type": "ListItem", "position": 4, "name": "Gestion des salaires des professeurs" },
+            { "@type": "ListItem", "position": 5, "name": "Suivi d'emploi des étudiants" },
+            { "@type": "ListItem", "position": 6, "name": "Gestion des pavillons" }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
         rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
+    <noscript>
+        <style>
+            .reveal {
+                opacity: 1;
+                transform: none
+            }
+        </style>
+    </noscript>
 </head>
 
 <body>
 
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-github" viewBox="0 0 24 24">
+            <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+        </symbol>
+    </svg>
+
     <a class="skip-link" href="#contenu">Aller au contenu</a>
 
     <nav aria-label="Navigation principale">
-        <a href="index.html" class="logo">JF.</a>
-        <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <a href="index.html" class="logo" aria-label="Joël Ferdinand, accueil">JF.</a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
             <span class="material-symbols-outlined">menu</span>
         </button>
         <ul class="nav-links" id="menu">
@@ -42,150 +108,219 @@
 
     <main id="contenu">
         <section style="padding-top: 8rem;" aria-labelledby="projets-title">
-            <div class="section-tag reveal" style="text-align: center;">Réalisations</div>
-            <h1 class="section-h reveal" id="projets-title" style="text-align: center; margin-bottom: 1rem;">Mes
-                <span>Projets &amp; Réalisations</span></h1>
-            <p class="section-intro reveal"
-                style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem auto; color: #a0aec0;">
-                Découvrez mes réalisations en développement Web, Mobile et solutions DevOps[cite: 8]. Chaque carte
-                intègre des images thématiques en ligne et redirige vers le code source GitHub[cite: 8].
+            <div class="section-tag reveal" style="text-align:center">Mon parcours</div>
+            <h1 class="section-h reveal" id="projets-title" style="text-align:center">Mes <span>Projets &amp;
+                    Réalisations</span></h1>
+            <p class="section-intro reveal" style="margin-left:auto;margin-right:auto;text-align:center">
+                Six réalisations, de la supervision de conteneurs Docker aux applications web et mobiles.
+                Chaque projet renvoie vers son code source sur GitHub.
             </p>
 
-            <!-- Boutons de filtre interactifs (Style ITDC) -->
-            <div class="project-filters reveal">
-                <button class="p-filter-btn active" data-filter="all">Tous</button>
-                <button class="p-filter-btn" data-filter="web">Web</button>
-                <button class="p-filter-btn" data-filter="mobile">Mobile</button>
-                <button class="p-filter-btn" data-filter="devops">DevOps</button>
+            <div class="filters reveal">
+                <div class="filters-inner" role="group" aria-label="Filtrer les projets">
+                    <button class="chip" data-filter="all" aria-pressed="true">Tous</button>
+                    <button class="chip" data-filter="devops" aria-pressed="false">DevOps</button>
+                    <button class="chip" data-filter="web" aria-pressed="false">Web</button>
+                    <button class="chip" data-filter="mobile" aria-pressed="false">Mobile</button>
+                </div>
             </div>
+            <p id="project-count" class="sr-only" aria-live="polite" style="position:absolute;left:-9999px">6 projets
+                affichés</p>
 
-            <!-- Grille des cartes de projets -->
-            <div class="projects-grid">
+            <div class="proj-grid">
 
-                <!-- Projet 1 : Docker Opt -->
-                <article class="project-card reveal" data-category="devops web">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">DevOps / Web</span>
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                            alt="Supervision Docker Dashboard" class="project-img" loading="lazy">
+                <!-- Projet 1 : CDD ITDC MADA -->
+                <article class="proj-card tilt reveal" data-cat="devops web"
+                    data-title="Plateforme de visualisation et d'optimisation des ressources Docker"
+                    data-desc="Conception et mise en œuvre d'une plateforme de supervision des applications déployées sous Docker, avec automatisation et fiabilisation des processus de déploiement dans un environnement conteneurisé."
+                    data-meta='[{"icon":"work","text":"CDD · ITDC MADA"},{"icon":"calendar_month","text":"04/2026 – 09/2026"},{"icon":"schedule","text":"5 mois"}]'
+                    data-points='["Monitoring et collecte de métriques avec Prometheus et cAdvisor.","Interface de supervision en React.js et Vite, backend Node.js, base PostgreSQL.","Conteneurisation et déploiement des services avec Docker.","Pipeline CI/CD Jenkins pour automatiser build, tests et déploiement du projet EpiMad.","Gestion du code source et collaboration via Git et GitHub."]'
+                    data-tags="Docker,Prometheus,cAdvisor,Node.js,PostgreSQL,React.js,Vite,Jenkins,Git,GitHub"
+                    data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#0b3265;--t2:#2979ff">
+                        <span class="proj-badge">DevOps</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">deployed_code</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Plateforme de supervision Docker</h2>
-                        <p class="project-desc">Plateforme de visualisation et d'optimisation des ressources
-                            conteneurisées avec monitoring en temps réel[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>React.js</span><span>Node.js</span><span>Docker</span><span>Prometheus</span><span>cAdvisor</span>[cite:
-                            8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 04/2026 – 09/2026</span>
+                            <span><span class="material-symbols-outlined">schedule</span> 5 mois</span>
                         </div>
-                        <a href="https://github.com/ferdinand4-jf/dockerOpt.git" target="_blank"
-                            rel="noopener noreferrer" class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Plateforme de supervision &amp; d'optimisation Docker</h2>
+                        <p class="proj-desc">Visualisation, monitoring (Prometheus, cAdvisor) et pipeline CI/CD Jenkins
+                            pour des
+                            applications conteneurisées.</p>
+                        <div class="tags outline"><span class="tag">Docker</span><span
+                                class="tag">Prometheus</span><span class="tag">React.js</span><span
+                                class="tag">Jenkins</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Projet 2 : Audit bancaire -->
-                <article class="project-card reveal" data-category="web">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">Web</span>
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80"
-                            alt="Audit bancaire et finance" class="project-img" loading="lazy">
+                <!-- Projet 2 : Audit des retraits bancaires -->
+                <article class="proj-card tilt reveal" data-cat="web" data-title="Audit des retraits bancaires"
+                    data-desc="Application web pour superviser et analyser les opérations bancaires, avec traitement et exploitation des données."
+                    data-meta='[{"icon":"school","text":"Projet académique · ENI Fianarantsoa"},{"icon":"calendar_month","text":"02/2026"}]'
+                    data-points='[]' data-tags="Django,Python,PostgreSQL" data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#1251a3;--t2:#5ca8ff">
+                        <span class="proj-badge">Web</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">account_balance</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Audit des retraits bancaires</h2>
-                        <p class="project-desc">Application web bancaire permettant la supervision, le suivi et
-                            l'analyse approfondie des retraits d'argent[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>Django</span><span>Python</span><span>PostgreSQL</span>[cite: 8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 02/2026</span>
                         </div>
-                        <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Audit des retraits bancaires</h2>
+                        <p class="proj-desc">Supervision et analyse des opérations bancaires, traitement et exploitation
+                            des
+                            données.</p>
+                        <div class="tags outline"><span class="tag">Django</span><span class="tag">Python</span><span
+                                class="tag">PostgreSQL</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Projet 3 : Recherche d'emploi -->
-                <article class="project-card reveal" data-category="web">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">Web</span>
-                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
-                            alt="Plateforme de recrutement" class="project-img" loading="lazy">
+                <!-- Projet 3 : Plateforme de recherche d'emploi -->
+                <article class="proj-card tilt reveal" data-cat="web" data-title="Plateforme de recherche d'emploi"
+                    data-desc="Conception et réalisation d'une plateforme web complète de recrutement et de gestion des informations."
+                    data-meta='[{"icon":"school","text":"Projet de fin d\u2019étude M1 · ENI Fianarantsoa"},{"icon":"calendar_month","text":"10/2025 – 12/2025"},{"icon":"schedule","text":"2 mois"}]'
+                    data-points='[]' data-tags="React JS,Express JS,PostgreSQL" data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#0b3265;--t2:#8fc4ff">
+                        <span class="proj-badge">Web</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">work</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Plateforme de recherche d'emploi</h2>
-                        <p class="project-desc">Application web complète pour le recrutement, la gestion des offres et
-                            l'interconnexion candidats-recruteurs[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>React JS</span><span>Express JS</span><span>PostgreSQL</span>[cite: 8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 10/2025 – 12/2025</span>
+                            <span><span class="material-symbols-outlined">schedule</span> 2 mois</span>
                         </div>
-                        <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Plateforme de recherche d'emploi</h2>
+                        <p class="proj-desc">Plateforme complète de recrutement et de gestion des informations candidats
+                            /
+                            recruteurs.</p>
+                        <div class="tags outline"><span class="tag">React JS</span><span class="tag">Express
+                                JS</span><span class="tag">PostgreSQL</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Projet 4 : Salaires des professeurs -->
-                <article class="project-card reveal" data-category="mobile">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">Mobile</span>
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
-                            alt="Application mobile de gestion" class="project-img" loading="lazy">
+                <!-- Projet 4 : Gestion des salaires des professeurs -->
+                <article class="proj-card tilt reveal" data-cat="mobile"
+                    data-title="Gestion des salaires des professeurs"
+                    data-desc="Conception et réalisation d'une application mobile de gestion administrative et des données salariales."
+                    data-meta='[{"icon":"school","text":"Projet académique · ENI Fianarantsoa"},{"icon":"calendar_month","text":"03/2025 – 05/2025"},{"icon":"schedule","text":"2 mois"}]'
+                    data-points='[]' data-tags="Java,MySQL" data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#071e3d;--t2:#1251a3">
+                        <span class="proj-badge">Mobile</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">payments</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Gestion des salaires des professeurs</h2>
-                        <p class="project-desc">Application mobile de gestion administrative et de calcul automatique
-                            des fiches de paie des enseignants[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>Java</span><span>MySQL</span><span>Android</span>[cite: 8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 03/2025 – 05/2025</span>
+                            <span><span class="material-symbols-outlined">schedule</span> 2 mois</span>
                         </div>
-                        <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Gestion des salaires des professeurs</h2>
+                        <p class="proj-desc">Application mobile de gestion administrative et des données salariales.</p>
+                        <div class="tags outline"><span class="tag">Java</span><span class="tag">MySQL</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- Projet 5 : Suivi d'emploi étudiants -->
-                <article class="project-card reveal" data-category="mobile">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">Mobile</span>
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-                            alt="Suivi étudiants" class="project-img" loading="lazy">
+                <!-- Projet 5 : Suivi d'emploi des étudiants -->
+                <article class="proj-card tilt reveal" data-cat="mobile" data-title="Suivi d'emploi des étudiants"
+                    data-desc="Développement d'une application mobile pour le suivi et la gestion des informations étudiantes."
+                    data-meta='[{"icon":"work","text":"Stage · Faculté des Sciences, Fianarantsoa"},{"icon":"calendar_month","text":"08/2023 – 11/2023"},{"icon":"schedule","text":"3 mois"}]'
+                    data-points='[]' data-tags="Flutter,Dart,Express JS,MySQL" data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#1251a3;--t2:#2979ff">
+                        <span class="proj-badge">Mobile</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">school</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Suivi d'emploi des étudiants</h2>
-                        <p class="project-desc">Application mobile de suivi et de gestion de l'insertion professionnelle
-                            des diplômés universitaires[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>Flutter</span><span>Dart</span><span>Express JS</span><span>MySQL</span>[cite: 8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 08/2023 – 11/2023</span>
+                            <span><span class="material-symbols-outlined">schedule</span> 3 mois</span>
                         </div>
-                        <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Suivi d'emploi des étudiants</h2>
+                        <p class="proj-desc">Suivi et gestion mobile des informations étudiantes.</p>
+                        <div class="tags outline"><span class="tag">Flutter</span><span class="tag">Dart</span><span
+                                class="tag">Express JS</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Projet 6 : Gestion des pavillons -->
-                <article class="project-card reveal" data-category="web">
-                    <div class="project-img-wrapper">
-                        <span class="project-badge">Web</span>
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
-                            alt="Infrastructures et gestion urbaine" class="project-img" loading="lazy">
+                <article class="proj-card tilt reveal" data-cat="web" data-title="Gestion des pavillons"
+                    data-desc="Conception et réalisation d'une application web de gestion administrative pour la Commune Urbaine d'Ambalavao."
+                    data-meta='[{"icon":"work","text":"Stage · Commune Urbaine d\u2019Ambalavao"},{"icon":"calendar_month","text":"09/2022 – 12/2022"},{"icon":"schedule","text":"3 mois"}]'
+                    data-points='[]' data-tags="Laravel,MySQL,JavaScript" data-git="https://github.com/Joel4268">
+                    <div class="proj-thumb" style="--t1:#0b3265;--t2:#1251a3">
+                        <span class="proj-badge">Web</span>
+                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
+                        <span class="thumb-ico material-symbols-outlined">apartment</span>
                     </div>
-                    <div class="project-body">
-                        <h2 class="project-title">Gestion des pavillons</h2>
-                        <p class="project-desc">Application web de gestion administrative et d'attribution des espaces
-                            pour la commune urbaine[cite: 8].</p>
-                        <div class="project-tags">
-                            <span>Laravel</span><span>MySQL</span><span>JavaScript</span>[cite: 8]
+                    <div class="proj-body">
+                        <div class="proj-meta">
+                            <span><span class="material-symbols-outlined">calendar_month</span> 09/2022 – 12/2022</span>
+                            <span><span class="material-symbols-outlined">schedule</span> 3 mois</span>
                         </div>
-                        <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                            class="project-btn">
-                            Voir le code <span class="material-symbols-outlined">arrow_forward</span>
-                        </a>
+                        <h2 class="proj-title">Gestion des pavillons</h2>
+                        <p class="proj-desc">Application web de gestion administrative pour la commune.</p>
+                        <div class="tags outline"><span class="tag">Laravel</span><span class="tag">MySQL</span><span
+                                class="tag">JavaScript</span></div>
+                        <div class="proj-actions">
+                            <button type="button" class="btn-blue" data-open-project><span
+                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
+                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
+                                    aria-hidden="true">
+                                    <use href="#i-github" />
+                                </svg></a>
+                        </div>
                     </div>
                 </article>
 
@@ -193,7 +328,35 @@
         </section>
     </main>
 
+    <!-- Fenêtre de détails projet -->
+    <dialog id="proj-dialog">
+        <div class="dlg-head">
+            <button type="button" class="dlg-close" aria-label="Fermer"><span
+                    class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="dlg-body">
+            <h2 class="dlg-title"></h2>
+            <div class="dlg-meta"></div>
+            <p class="dlg-desc"></p>
+            <ul class="exp-list dlg-list"></ul>
+            <div class="tags outline dlg-tags"></div>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="git-btn dlg-git">
+                <svg class="icon-svg" aria-hidden="true">
+                    <use href="#i-github" />
+                </svg> Voir le code sur GitHub <span class="material-symbols-outlined">open_in_new</span>
+            </a>
+        </div>
+    </dialog>
+
     <footer>
+        <ul class="footer-social">
+            <li><a class="social-link" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
+                    aria-label="GitHub"><svg class="icon-svg" aria-hidden="true">
+                        <use href="#i-github" />
+                    </svg></a></li>
+            <li><a class="social-link" href="mailto:niainajoelferdinand@gmail.com" aria-label="E-mail"><span
+                        class="material-symbols-outlined">mail</span></a></li>
+        </ul>
         <p>© 2026 <strong>Nahandrisoaniaina Joël Ferdinand</strong></p>
     </footer>
 

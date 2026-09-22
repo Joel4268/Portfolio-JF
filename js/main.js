@@ -41,31 +41,6 @@
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterButtons = document.querySelectorAll('.p-filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    // On vérifie que les éléments existent sur la page actuelle (ex: projets.html)
-    if (filterButtons.length > 0 && projectCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    if (filterValue === 'all' || (categories && categories.includes(filterValue))) {
-                        card.classList.remove('hide');
-                    } else {
-                        card.classList.add('hide');
-                    }
-                });
-            });
-        });
-    }
-});
   /* ---------- Texte qui s'écrit ---------- */
   function initTyped() {
     const el = document.getElementById('typed');
@@ -128,24 +103,21 @@
     });
   }
 
-  /* ---------- Tilt 3D Spécifique pour la Photo Pro ---------- */
+  /* ---------- Inclinaison douce de la photo de profil ---------- */
   function initPhotoTilt() {
-    const container = document.getElementById('photoProContainer');
-    if (!container || reduceMotion || !finePointer) return;
-
-    container.addEventListener('pointermove', (e) => {
-      const r = container.getBoundingClientRect();
-      const px = (e.clientX - r.left) / r.width - 0.5;
-      const py = (e.clientY - r.top) / r.height - 0.5;
-      
-      const rx = (-py * 14).toFixed(2);
-      const ry = (px * 14).toFixed(2);
-      
-      container.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02, 1.02, 1.02)`;
+    const wrap = document.querySelector('.photo-3d');
+    if (!wrap || reduceMotion || !finePointer) return;
+    const hero = document.getElementById('hero') || wrap;
+    hero.addEventListener('pointermove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const px = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const py = (e.clientY - (r.top + r.height / 2)) / r.height;
+      wrap.style.setProperty('--py', (px * 8).toFixed(2) + 'deg');
+      wrap.style.setProperty('--px', (-py * 8).toFixed(2) + 'deg');
     });
-
-    container.addEventListener('pointerleave', () => {
-      container.style.transform = '';
+    hero.addEventListener('pointerleave', () => {
+      wrap.style.setProperty('--px', '0deg');
+      wrap.style.setProperty('--py', '0deg');
     });
   }
 
@@ -163,14 +135,76 @@
         cards.forEach((card) => {
           const ok = f === 'all' || card.dataset.cat.split(' ').includes(f);
           card.hidden = !ok;
-          if (ok) { shown++; card.classList.add('on'); }
+          if (ok) shown++;
         });
         if (counter) counter.textContent = shown + (shown > 1 ? ' projets affichés' : ' projet affiché');
       });
     });
   }
 
-  /* ---------- SCÈNE 3D MINIO LOGIN ---------- */
+  /* ---------- Fenêtre de détails projet ---------- */
+  function initProjectDialogs() {
+    const dialog = document.getElementById('proj-dialog');
+    if (!dialog) return;
+    const titleEl = dialog.querySelector('.dlg-title');
+    const metaEl = dialog.querySelector('.dlg-meta');
+    const descEl = dialog.querySelector('.dlg-desc');
+    const listEl = dialog.querySelector('.dlg-list');
+    const tagsEl = dialog.querySelector('.dlg-tags');
+    const gitEl = dialog.querySelector('.dlg-git');
+    const closeBtn = dialog.querySelector('.dlg-close');
+
+    const fill = (list, el, render) => {
+      el.innerHTML = '';
+      list.forEach((item) => el.appendChild(render(item)));
+    };
+
+    document.querySelectorAll('[data-open-project]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('[data-cat]');
+        if (!card) return;
+        titleEl.textContent = card.dataset.title || '';
+
+        fill(JSON.parse(card.dataset.meta || '[]'), metaEl, (m) => {
+          const span = document.createElement('span');
+          span.innerHTML = `<span class="material-symbols-outlined">${m.icon}</span>${m.text}`;
+          return span;
+        });
+
+        descEl.textContent = card.dataset.desc || '';
+
+        const points = JSON.parse(card.dataset.points || '[]');
+        listEl.style.display = points.length ? '' : 'none';
+        fill(points, listEl, (t) => {
+          const li = document.createElement('li');
+          li.innerHTML = `<span class="material-symbols-outlined">check_circle</span><span>${t}</span>`;
+          return li;
+        });
+
+        fill((card.dataset.tags || '').split(',').filter(Boolean), tagsEl, (t) => {
+          const span = document.createElement('span');
+          span.className = 'tag';
+          span.textContent = t;
+          return span;
+        });
+
+        const gitUrl = card.dataset.git;
+        gitEl.style.display = gitUrl ? '' : 'none';
+        if (gitUrl) gitEl.href = gitUrl;
+
+        dialog.showModal();
+      });
+    });
+
+    closeBtn.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  }
+
+  /* ================================================================
+     Fond 3D animé de la section d'accueil : nappe ondulante façon
+     écran de connexion MinIO — un seul dégradé bleu, sans grille ni
+     motif superposé à la photo.
+  ================================================================ */
   function initScene() {
     const canvas = document.getElementById('scene');
     if (!canvas || !window.THREE) return;
@@ -186,81 +220,61 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setClearColor(0x000000, 0);
 
-    const COLORS = { gold: 0xf0c060, sky: 0x2979ff, glow: 0x5ca8ff, frost: 0xb8d9ff };
-    const FOV = 45;
-    const CAM_Z = 12;
-
     const scene = new T.Scene();
-    const camera = new T.PerspectiveCamera(FOV, 1, 0.1, 100);
-    camera.position.z = CAM_Z;
+    const camera = new T.PerspectiveCamera(50, 1, 0.1, 100);
+    camera.position.set(0, 3.1, 6.4);
+    camera.lookAt(0, -0.2, -3);
 
-    const root = new T.Group();
-    scene.add(root);
+    /* Nappe ondulante : lignes horizontales seules (pas de croisillons/
+       quadrillage), façon courbes de niveau — même esprit que la vague
+       animée de l'écran de connexion MinIO. */
+    const W = 30, D = 24, ROWS = 34, PTS = 90;
+    const rowsBase = [];
+    const linePositions = new Float32Array(ROWS * (PTS - 1) * 2 * 3);
+    const lineColors = new Float32Array(ROWS * (PTS - 1) * 2 * 3);
 
-    /* 1. Réseau de nœuds 3D interconnectés style MinIO Server */
-    const nodeCount = 45;
-    const nodes = [];
-    const nodePositions = new Float32Array(nodeCount * 3);
-    
-    for (let i = 0; i < nodeCount; i++) {
-      const x = (Math.random() - 0.5) * 16;
-      const y = (Math.random() - 0.5) * 10;
-      const z = (Math.random() - 0.5) * 8;
-      nodes.push({ x, y, z, vx: (Math.random() - 0.5) * 0.008, vy: (Math.random() - 0.5) * 0.008 });
-      nodePositions[i * 3] = x;
-      nodePositions[i * 3 + 1] = y;
-      nodePositions[i * 3 + 2] = z;
+    for (let r = 0; r < ROWS; r++) {
+      const row = new Float32Array(PTS);
+      const z = -1 - (r / (ROWS - 1)) * D;
+      for (let i = 0; i < PTS; i++) row[i] = z;
+      rowsBase.push({ z, xs: (() => {
+        const xs = new Float32Array(PTS);
+        for (let i = 0; i < PTS; i++) xs[i] = -W / 2 + (i / (PTS - 1)) * W;
+        return xs;
+      })() });
     }
 
-    const pGeo = new T.BufferGeometry();
-    pGeo.setAttribute('position', new T.BufferAttribute(nodePositions, 3));
-    const pMat = new T.PointsMaterial({
-      color: COLORS.glow,
-      size: 0.12,
-      transparent: true,
-      opacity: 0.85
-    });
-    const pointCloud = new T.Points(pGeo, pMat);
-    root.add(pointCloud);
+    const colorDeep = new T.Color(0x0b3265);
+    const colorMid = new T.Color(0x2979ff);
+    const colorGlow = new T.Color(0x9fcdff);
 
-    /* Lignes de connexion réseau dynamic */
     const lineGeo = new T.BufferGeometry();
-    const lineMat = new T.LineBasicMaterial({
-      color: COLORS.sky,
+    lineGeo.setAttribute('position', new T.BufferAttribute(linePositions, 3));
+    lineGeo.setAttribute('color', new T.BufferAttribute(lineColors, 3));
+    const mat = new T.LineBasicMaterial({
+      vertexColors: true,
       transparent: true,
-      opacity: 0.25
+      opacity: 0.6
     });
-    const lineMesh = new T.LineSegments(lineGeo, lineMat);
-    root.add(lineMesh);
+    const mesh = new T.LineSegments(lineGeo, mat);
+    mesh.position.y = -1.7;
+    scene.add(mesh);
 
-    /* 2. Cubes de stockage MinIO flottants en 3D */
-    const cubes = [];
-    const cubeGroup = new T.Group();
-    root.add(cubeGroup);
-
-    for (let i = 0; i < 8; i++) {
-      const geo = new T.BoxGeometry(0.5, 0.5, 0.5);
-      const mat = new T.MeshBasicMaterial({
-        color: i % 2 === 0 ? COLORS.gold : COLORS.sky,
-        wireframe: true,
-        transparent: true,
-        opacity: 0.5
-      });
-      const mesh = new T.Mesh(geo, mat);
-      mesh.position.set(
-        (Math.random() - 0.5) * 12,
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 6
-      );
-      cubeGroup.add(mesh);
-      cubes.push({
-        mesh,
-        rotX: (Math.random() - 0.5) * 0.02,
-        rotY: (Math.random() - 0.5) * 0.02
-      });
+    /* Fine brume de particules pour la profondeur */
+    const STAR_COUNT = 140;
+    const starPos = new Float32Array(STAR_COUNT * 3);
+    for (let i = 0; i < STAR_COUNT; i++) {
+      starPos[i * 3] = (Math.random() - 0.5) * 24;
+      starPos[i * 3 + 1] = Math.random() * 7 - 0.5;
+      starPos[i * 3 + 2] = -Math.random() * 20 - 1;
     }
+    const starGeo = new T.BufferGeometry();
+    starGeo.setAttribute('position', new T.BufferAttribute(starPos, 3));
+    const stars = new T.Points(starGeo, new T.PointsMaterial({
+      color: 0xb8d9ff, size: 0.035, transparent: true, opacity: 0.5, depthWrite: false
+    }));
+    scene.add(stars);
 
-    /* Redimensionnement */
     const layout = () => {
       const rect = canvas.getBoundingClientRect();
       const w = Math.max(1, rect.width);
@@ -269,67 +283,84 @@
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
     };
-
     layout();
-    window.addEventListener('resize', layout);
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(layout).observe(canvas);
+    } else {
+      window.addEventListener('resize', layout);
+    }
 
-    /* Interaction Souris */
-    let mx = 0, my = 0;
+    let mx = 0;
     window.addEventListener('pointermove', (e) => {
-      mx = (e.clientX / window.innerWidth - 0.5) * 0.8;
-      my = (e.clientY / window.innerHeight - 0.5) * 0.8;
+      mx = (e.clientX / window.innerWidth) * 2 - 1;
     }, { passive: true });
 
-    /* Boucle d'animation MinIO */
     const clock = new T.Clock();
     let raf = 0;
+    let running = false;
 
-    const animate = () => {
-      const dt = clock.getDelta();
-      
-      // Animation douce de la caméra / scène
-      root.rotation.y += (mx - root.rotation.y) * 0.05;
-      root.rotation.x += (my - root.rotation.x) * 0.05;
+    const waveY = (x, z, t) =>
+      Math.sin(x * 0.32 + t * 0.55) * 0.38 +
+      Math.sin(z * 0.22 - t * 0.4) * 0.46 +
+      Math.sin((x - z) * 0.15 + t * 0.25) * 0.22;
 
-      // Mise à jour des positions des nœuds
-      const linePositions = [];
-      const posAttr = pointCloud.geometry.attributes.position;
+    const frame = () => {
+      const t = clock.getElapsedTime();
+      let p = 0, c = 0;
 
-      for (let i = 0; i < nodeCount; i++) {
-        const n = nodes[i];
-        n.x += n.vx;
-        n.y += n.vy;
+      for (let r = 0; r < ROWS; r++) {
+        const { z, xs } = rowsBase[r];
+        const depth = T.MathUtils.clamp((-z) / D, 0, 1);
+        let prevY = waveY(xs[0], z, t);
+        for (let i = 0; i < PTS - 1; i++) {
+          const x0 = xs[i], x1 = xs[i + 1];
+          const y0 = prevY;
+          const y1 = waveY(x1, z, t);
+          prevY = y1;
 
-        if (Math.abs(n.x) > 8) n.vx *= -1;
-        if (Math.abs(n.y) > 5) n.vy *= -1;
+          linePositions[p++] = x0; linePositions[p++] = y0; linePositions[p++] = z;
+          linePositions[p++] = x1; linePositions[p++] = y1; linePositions[p++] = z;
 
-        posAttr.setXYZ(i, n.x, n.y, n.z);
-
-        // Connexions entre nœuds proches
-        for (let j = i + 1; j < nodeCount; j++) {
-          const n2 = nodes[j];
-          const dist = Math.hypot(n.x - n2.x, n.y - n2.y, n.z - n2.z);
-          if (dist < 3.2) {
-            linePositions.push(n.x, n.y, n.z);
-            linePositions.push(n2.x, n2.y, n2.z);
-          }
+          const lift0 = T.MathUtils.clamp((y0 + 1) / 1.6, 0, 1);
+          const lift1 = T.MathUtils.clamp((y1 + 1) / 1.6, 0, 1);
+          const col0 = colorDeep.clone().lerp(colorMid, depth).lerp(colorGlow, lift0 * 0.6);
+          const col1 = colorDeep.clone().lerp(colorMid, depth).lerp(colorGlow, lift1 * 0.6);
+          lineColors[c++] = col0.r; lineColors[c++] = col0.g; lineColors[c++] = col0.b;
+          lineColors[c++] = col1.r; lineColors[c++] = col1.g; lineColors[c++] = col1.b;
         }
       }
+      lineGeo.attributes.position.needsUpdate = true;
+      lineGeo.attributes.color.needsUpdate = true;
 
-      posAttr.needsUpdate = true;
-      lineGeo.setAttribute('position', new T.Float32BufferAttribute(linePositions, 3));
-
-      // Animation des cubes
-      cubes.forEach((c) => {
-        c.mesh.rotation.x += c.rotX;
-        c.mesh.rotation.y += c.rotY;
-      });
+      camera.position.x = mx * 0.6;
+      camera.lookAt(0, -0.2, -3);
+      stars.rotation.y = t * 0.01;
 
       renderer.render(scene, camera);
-      if (!reduceMotion) raf = requestAnimationFrame(animate);
+      if (running) raf = requestAnimationFrame(frame);
     };
 
-    animate();
+    const start = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(frame);
+    };
+    const stop = () => { running = false; cancelAnimationFrame(raf); };
+
+    frame();
+    if (!reduceMotion) start();
+
+    const hero = document.getElementById('hero');
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        if (reduceMotion) return;
+        entries[0].isIntersecting ? start() : stop();
+      }, { threshold: 0.05 }).observe(hero);
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (reduceMotion) return;
+      document.hidden ? stop() : start();
+    });
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -340,6 +371,7 @@
     initTilt();
     initPhotoTilt();
     initFilters();
+    initProjectDialogs();
     initScene();
   });
 })();
