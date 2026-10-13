@@ -182,33 +182,84 @@
                     </div>
                 </article>
 
-                <!-- Projet 2 : Audit des retraits bancaires -->
-                <article class="proj-card tilt reveal" data-cat="web" data-title="Audit des retraits bancaires"
-                    data-desc="Application web pour superviser et analyser les opérations bancaires, avec traitement et exploitation des données."
-                    data-meta='[{"icon":"school","text":"Projet académique · ENI Fianarantsoa"},{"icon":"calendar_month","text":"02/2026"}]'
-                    data-points='[]' data-tags="Django,Python,PostgreSQL" data-git="https://github.com/Joel4268">
-                    <div class="proj-thumb" style="--t1:#1251a3;--t2:#5ca8ff">
-                        <span class="proj-badge">Web</span>
-                        <div class="thumb-win" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <span class="thumb-ico material-symbols-outlined">account_balance</span>
+                <!-- Projet EpiMad -->
+                <article class="proj-card" data-title="EpiMad — Suivi des exploitations agricoles" data-category="Web"
+                    data-desc="EpiMad est une plateforme dédiée au suivi des exploitations agricoles. Elle permet de centraliser les informations sur les exploitations, les parcelles et les cultures afin de faciliter le suivi des activités agricoles et la prise de décision."
+                    data-tech="Python, FastAPI, React, PostgreSQL, PostGIS, Docker" data-git=""
+                    data-demo="https://epimad.ddns.net" data-image="./epimad.png">
+                    <!-- Image du projet, comme DockerOpt -->
+                    <div class="proj-thumb" style="
+            height: 180px;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            background: #075e54;
+        ">
+                        <span class="proj-badge" style="
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 2;
+            ">
+                            Web
+                        </span>
+
+                        <a href="https://epimad.ddns.net" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ouvrir la démonstration EpiMad" style="
+                display: block;
+                width: 100%;
+                height: 100%;
+            ">
+                            <img src="./epimad.png"
+                                alt="Aperçu de la plateforme EpiMad de suivi des exploitations agricoles" loading="lazy"
+                                style="
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        </a>
                     </div>
+
+                    <!-- Informations du projet -->
                     <div class="proj-body">
                         <div class="proj-meta">
-                            <span><span class="material-symbols-outlined">calendar_month</span> 02/2026</span>
+                            <span class="proj-category">Développement Web</span>
+                            <span class="proj-status">En ligne</span>
                         </div>
-                        <h2 class="proj-title">Audit des retraits bancaires</h2>
-                        <p class="proj-desc">Supervision et analyse des opérations bancaires, traitement et exploitation
-                            des données.</p>
-                        <div class="tags outline"><span class="tag">Django</span><span class="tag">Python</span><span
-                                class="tag">PostgreSQL</span></div>
+
+                        <h3 class="proj-title">
+                            EpiMad — Suivi des exploitations agricoles
+                        </h3>
+
+                        <p class="proj-description">
+                            Plateforme de suivi des exploitations agricoles permettant
+                            de gérer les parcelles, les cultures et les activités
+                            agricoles à partir d'une interface centralisée.
+                        </p>
+
+                        <!-- Technologies -->
+                        <div class="proj-tech">
+                            <span>React</span>
+                            <span>Python</span>
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
+                            <span>PostGIS</span>
+                            <span>Docker</span>
+                        </div>
+
+                        <!-- Actions : aucun lien GitHub -->
                         <div class="proj-actions">
-                            <button type="button" class="btn-blue" data-open-project><span
-                                    class="material-symbols-outlined">visibility</span> Voir les détails</button>
-                            <a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer"
-                                class="git-btn" aria-label="Voir le code sur GitHub"><svg class="icon-svg"
-                                    aria-hidden="true">
-                                    <use href="#i-github" />
-                                </svg></a>
+                            <button type="button" class="btn btn-outline" data-open-project>
+                                Voir les détails
+                            </button>
+
+                            <a href="https://epimad.ddns.net" class="btn btn-primary" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                Démo live
+                            </a>
                         </div>
                     </div>
                 </article>
