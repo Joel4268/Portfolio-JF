@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 130" width="100%" height="100%" fill="none">
+  <style>
+    .label { font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #2D3748; }
+  </style>
+
+  <!-- HTML5 -->
+  <g transform="translate(15, 10)">
+    <path d="M14 0l-14 65 31 9 31-9-14-65h-48z" fill="#E34F26" />
+    <path d="M31 68l25-6 6-54h-31v60z" fill="#EF652A" />
+    <text x="31" y="98" class="label" text-anchor="middle">HTML5</text>
+  </g>
+
+  <!-- CSS3 -->
+  <g transform="translate(95, 10)">
+    <path d="M14 0l-14 65 31 9 31-9-14-65h-48z" fill="#1572B6" />
+    <path d="M31 68l25-6 6-54h-31v60z" fill="#33A9DC" />
+    <text x="31" y="98" class="label" text-anchor="middle">CSS3</text>
+  </g>
+
+  <!-- JavaScript -->
+  <g transform="translate(175, 10)">
+    <rect width="62" height="62" rx="10" fill="#F7DF1E" />
+    <text x="31" y="40" font-family="sans-serif" font-weight="bold" font-size="24" fill="#000" text-anchor="middle">JS</text>
+    <text x="31" y="98" class="label" text-anchor="middle">JavaScript</text>
+  </g>
+
+  <!-- TypeScript -->
+  <g transform="translate(255, 10)">
+    <rect width="62" height="62" rx="10" fill="#3178C6" />
+    <text x="31" y="40" font-family="sans-serif" font-weight="bold" font-size="24" fill="#FFF" text-anchor="middle">TS</text>
+    <text x="31" y="98" class="label" text-anchor="middle">TypeScript</text>
+  </g>
+
+  <!-- React JS -->
+  <g transform="translate(335, 10)">
+    <ellipse cx="31" cy="31" rx="27" ry="10" stroke="#61DAFB" stroke-width="3" transform="rotate(0 31 31)" />
+    <ellipse cx="31" cy="31" rx="27" ry="10" stroke="#61DAFB" stroke-width="3" transform="rotate(60 31 31)" />
+    <ellipse cx="31" cy="31" rx="27" ry="10" stroke="#61DAFB" stroke-width="3" transform="rotate(120 31 31)" />
+    <circle cx="31" cy="31" r="5" fill="#61DAFB" />
+    <text x="31" y="98" class="label" text-anchor="middle">React JS</text>
+  </g>
+
+  <!-- Next.js -->
+  <g transform="translate(415, 10)">
+    <circle cx="31" cy="31" r="29" fill="#000" />
+    <path d="M42 45L22 18h-4v26h5V26l17 23h4z" fill="#FFF" />
+    <rect x="43" y="18" width="4" height="26" fill="#FFF" />
+    <text x="31" y="98" class="label" text-anchor="middle">Next.js</text>
+  </g>
+
+  <!-- NestJS -->
+  <g transform="translate(495, 10)">
+    <path d="M31 3l18 11v22L31 47 13 36V14z" fill="#E0234E" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">NEST</text>
+    <text x="31" y="98" class="label" text-anchor="middle">NestJS</text>
+  </g>
+
+  <!-- PHP -->
+  <g transform="translate(575, 10)">
+    <ellipse cx="31" cy="31" rx="30" ry="17" fill="#777BB4" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="18" fill="#FFF" text-anchor="middle">php</text>
+    <text x="31" y="98" class="label" text-anchor="middle">PHP</text>
+  </g>
+
+  <!-- Laravel -->
+  <g transform="translate(655, 10)">
+    <path d="M10 10l21-11 21 11v38l-21 11-21-11z" fill="#FF2D20" />
+    <text x="31" y="40" font-family="sans-serif" font-weight="bold" font-size="24" fill="#FFF" text-anchor="middle">L</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Laravel</text>
+  </g>
+
+  <!-- Python -->
+  <g transform="translate(735, 10)">
+    <rect width="62" height="62" rx="10" fill="#3776AB" />
+    <text x="31" y="40" font-family="sans-serif" font-weight="bold" font-size="22" fill="#FFD43B" text-anchor="middle">Py</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Python</text>
+  </g>
+
+  <!-- FastAPI -->
+  <g transform="translate(815, 10)">
+    <circle cx="31" cy="31" r="29" fill="#059669" />
+    <polygon points="31,10 18,35 31,35 28,52 45,28 31,28" fill="#FFF" />
+    <text x="31" y="98" class="label" text-anchor="middle">FastAPI</text>
+  </g>
+
+  <!-- Express JS -->
+  <g transform="translate(895, 10)">
+    <rect width="62" height="62" rx="10" fill="#000" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">Express</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Express JS</text>
+  </g>
+
+  <!-- MySQL -->
+  <g transform="translate(975, 10)">
+    <rect width="62" height="62" rx="10" fill="#00758F" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="13" fill="#F29111" text-anchor="middle">MySQL</text>
+    <text x="31" y="98" class="label" text-anchor="middle">MySQL</text>
+  </g>
+
+  <!-- PostgreSQL -->
+  <g transform="translate(1055, 10)">
+    <circle cx="31" cy="31" r="29" fill="#336791" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="18" fill="#FFF" text-anchor="middle">PG</text>
+    <text x="31" y="98" class="label" text-anchor="middle">PostgreSQL</text>
+  </g>
+
+  <!-- SQLite -->
+  <g transform="translate(1135, 10)">
+    <rect width="62" height="62" rx="10" fill="#003B57" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="13" fill="#4AD5FF" text-anchor="middle">SQLite</text>
+    <text x="31" y="98" class="label" text-anchor="middle">SQLite</text>
+  </g>
+
+  <!-- Flutter -->
+  <g transform="translate(1215, 10)">
+    <polygon points="35,6 10,31 19,40 53,6" fill="#47C5FB" />
+    <polygon points="33,35 17,51 35,51 44,42" fill="#02569B" />
+    <text x="31" y="98" class="label" text-anchor="middle">Flutter</text>
+  </g>
+
+  <!-- Dart -->
+  <g transform="translate(1295, 10)">
+    <rect width="62" height="62" rx="10" fill="#0175C2" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="16" fill="#FFF" text-anchor="middle">Dart</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Dart</text>
+  </g>
+
+  <!-- Jenkins -->
+  <g transform="translate(1375, 10)">
+    <rect width="62" height="62" rx="10" fill="#D24939" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="13" fill="#FFF" text-anchor="middle">Jenkins</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Jenkins CI/CD</text>
+  </g>
+
+  <!-- Git / GitHub -->
+  <g transform="translate(1455, 10)">
+    <rect width="62" height="62" rx="10" fill="#F05032" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="18" fill="#FFF" text-anchor="middle">Git</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Git / GitHub</text>
+  </g>
+
+  <!-- Docker -->
+  <g transform="translate(1535, 10)">
+    <rect width="62" height="62" rx="10" fill="#2496ED" />
+    <path d="M16 35h7v7h-7v-7zm9 0h7v7h-7v-7zm9 0h7v7h-7v-7zm-9-9h7v7h-7v-7zm9 0h7v7h-7v-7zm-4-13c0 10 8 17 24 17s24-7 24-17H12z" fill="#FFF" />
+    <text x="31" y="98" class="label" text-anchor="middle">Docker</text>
+  </g>
+
+  <!-- Nginx -->
+  <g transform="translate(1615, 10)">
+    <rect width="62" height="62" rx="10" fill="#009639" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="14" fill="#FFF" text-anchor="middle">Nginx</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Nginx</text>
+  </g>
+
+  <!-- AWS -->
+  <g transform="translate(1695, 10)">
+    <rect width="62" height="62" rx="10" fill="#FF9900" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="16" fill="#000" text-anchor="middle">AWS</text>
+    <text x="31" y="98" class="label" text-anchor="middle">AWS</text>
+  </g>
+
+  <!-- cAdvisor -->
+  <g transform="translate(1775, 10)">
+    <rect width="62" height="62" rx="10" fill="#2563EB" />
+    <path d="M31 16L18 24v14l13 8 13-8V24z" fill="#93C5FD" />
+    <circle cx="31" cy="31" r="5" fill="#FFF" />
+    <text x="31" y="98" class="label" text-anchor="middle">cAdvisor</text>
+  </g>
+
+  <!-- Prometheus -->
+  <g transform="translate(1855, 10)">
+    <rect width="62" height="62" rx="10" fill="#E6522C" />
+    <circle cx="31" cy="31" r="16" fill="#FFF" />
+    <path d="M31 19v24M23 27h16" stroke="#E6522C" stroke-width="4" stroke-linecap="round" />
+    <text x="31" y="98" class="label" text-anchor="middle">Prometheus</text>
+  </g>
+
+  <!-- Grafana -->
+  <g transform="translate(1935, 10)">
+    <rect width="62" height="62" rx="10" fill="#F46800" />
+    <path d="M22 23l9-6 9 6v15l-9 6-9-6z" fill="#FFF" />
+    <circle cx="31" cy="27" r="4" fill="#F46800" />
+    <text x="31" y="98" class="label" text-anchor="middle">Grafana</text>
+  </g>
+
+  <!-- Administration Linux -->
+  <g transform="translate(2015, 10)">
+    <rect width="62" height="62" rx="10" fill="#FCC624" />
+    <text x="31" y="38" font-family="sans-serif" font-weight="bold" font-size="13" fill="#000" text-anchor="middle">Linux</text>
+    <text x="31" y="98" class="label" text-anchor="middle">Admin Linux</text>
+  </g>
+</svg>
