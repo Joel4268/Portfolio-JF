@@ -1,580 +1,134 @@
 <!DOCTYPE html>
-<html class="no-js" lang="fr">
-
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>JL - Portfolio</title>
-  <meta name="description"
-    content="Portfolio de NAHANDRISOANIAINA Joël Ferdinand - Ingénieur DevOps & Développeur Full Stack" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ========================= CSS here ========================= -->
-  <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
-  <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-  <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
-
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joël Ferdinand · Développeur Full Stack & DevOps</title>
+<meta name="description" content="Portfolio de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack Web & Mobile et DevOps à Fianarantsoa, Madagascar.">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#accueil" class="brand"><img src="assets/logo.svg" alt="Joël Ferdinand"></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="menu" id="menu">
+      <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#contact">Contact</a>
+      <a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download class="btn btn-sm">CV <i>↓</i></a>
+    </nav>
+  </div>
+</header>
 
-  <!-- ========================= preloader start ========================= -->
-  <div class="preloader">
-    <div class="loader">
-      <div class="spinner">
-        <div class="spinner-container">
-          <div class="spinner-rotator">
-            <div class="spinner-left">
-              <div class="spinner-circle"></div>
-            </div>
-            <div class="spinner-right">
-              <div class="spinner-circle"></div>
-            </div>
-          </div>
-        </div>
+<main>
+<section id="accueil" class="hero">
+  <div class="wrap hero-in">
+    <div class="rv">
+      <span class="tag">● Disponible immédiatement</span>
+      <h1>Développeur Full Stack &amp; <em>DevOps</em></h1>
+      <p>Basé à Fianarantsoa, Madagascar, je conçois, conteneurise et déploie des applications web et mobile : React, Next.js, NestJS, FastAPI, Flutter, avec Docker, Jenkins et Prometheus.</p>
+      <div class="actions">
+        <a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download class="btn">Télécharger mon CV <i>↓</i></a>
+        <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
       </div>
+    </div>
+    <div class="term rv" aria-hidden="true">
+      <div class="term-bar"><b></b><b></b><b></b><span>pipeline.jenkins</span></div>
+      <pre><span class="c"># build &amp; déploiement</span>
+<span class="g">✔</span> git push origin main
+<span class="g">✔</span> docker build -t app .
+<span class="g">✔</span> tests : 42 passés
+<span class="g">✔</span> nginx + certbot (HTTPS)
+<span class="b">→</span> production : <span class="g">en ligne</span><i class="cur"></i></pre>
     </div>
   </div>
-  <!-- ========================= preloader end ========================= -->
+</section>
 
-  <!-- ========================= hero-section-wrapper-5 start ========================= -->
-  <section id="home" class="hero-section-wrapper-5">
-
-    <!-- ========================= header-6 start ========================= -->
-    <header class="header header-6">
-      <div class="navbar-area">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                  <img src="assets/img/logo/logo.svg" alt="Logo Joël Ferdinand" style="height: 45px; width: auto;" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6"
-                  aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
-                  <ul id="nav6" class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                      <a class="page-scroll active" href="#home">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#about">Apropos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#formation">Formation</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#projets">Projets</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#contact">Contacter</a>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!-- ========================= header-6 end ========================= -->
-
-    <!-- ========================= hero-5 start ========================= -->
-    <div class="hero-section hero-style-5 img-bg" style="background-image: url('assets/img/hero/hero-5/hero-bg.svg')">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="hero-content-wrapper">
-              <h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">Ingénieur DevOps</h2>
-              <p class="mb-30 wow fadeInUp" data-wow-delay=".4s">Ingénieur DevOps et développeur Full Stack Web & Mobile
-                à Fianarantsoa Madagascar, je conçois, déploie et optimise des applications modernes : React.js,
-                Node.js, Python, Flutter, Docker et pipelines CI/CD avec Jenkins.
-              </p>
-
-              <a href="#contact" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">
-                Contacter <i class="lni lni-phone"></i>
-              </a>
-            </div>
-          </div>
-          <div class="col-lg-6 align-self-end">
-            <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
-              <img src="assets/img/hero/hero-5/hero-img.svg" alt="">
-            </div>
-          </div>
-        </div>
-      </div>
+<section id="apropos" class="sec">
+  <div class="wrap about">
+    <div class="rv">
+      <h2>À propos de moi</h2>
+      <p>Développeur Full Stack Web &amp; Mobile et DevOps, avec 4 ans d'expérience à travers stages, projets académiques et une mission professionnelle chez ITDC MADA. À l'aise en équipe comme en autonomie, avec un bon sens de l'analyse et de la résolution de problèmes.</p>
+      <ul class="ticks">
+        <li>Conteneurisation et pipelines CI/CD Jenkins, Docker, Nginx.</li>
+        <li>Supervision avec Prometheus et cAdvisor.</li>
+        <li>Applications web et mobile de bout en bout.</li>
+      </ul>
     </div>
-    <!-- ========================= hero-5 end ========================= -->
+    <aside class="cv rv">
+      <small>Curriculum vitae</small>
+      <h3>NAHANDRISOANIAINA Joël Ferdinand</h3>
+      <p>Développeur Full Stack Web &amp; Mobile · DevOps</p>
+      <dl><dt>Expérience</dt><dd>ITDC MADA · DockerOpt (2026)</dd><dt>Diplôme</dt><dd>Master 2 Informatique, ENI</dd><dt>Langues</dt><dd>Français, Anglais</dd></dl>
+      <a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download class="btn">Télécharger le CV (PDF) <i>↓</i></a>
+    </aside>
+  </div>
+</section>
 
-  </section>
-
-  <!-- ========================= about style-4 start ========================= -->
-  <section id="about" class="about-section about-style-4">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <div class="col-xl-5 col-lg-6">
-          <div class="about-content-wrapper">
-
-            <div class="section-title mb-30">
-              <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                À propos de moi
-              </h3>
-
-              <p class="wow fadeInUp" data-wow-delay=".3s">
-                Ingénieur DevOps et développeur Full Stack,
-                spécialisé dans la conception, le développement, le déploiement
-                et l’optimisation d’applications modernes. Passionné par
-                l’innovation et l’automatisation, je m’engage à concevoir
-                des solutions performantes, fiables et évolutives.
-              </p>
-            </div>
-
-            <ul>
-              <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"></i>
-                Automatisation et optimisation des processus de déploiement.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".4s">
-                <i class="lni lni-checkmark-circle"></i>
-                Conception et développement d’applications modernes et évolutives.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".45s">
-                <i class="lni lni-checkmark-circle"></i>
-                Esprit d’analyse, autonomie et collaboration en équipe.
-              </li>
-            </ul>
-
-            <a href="#contact" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">
-              Me contacter
-            </a>
-
-          </div>
-        </div>
-
-        <div class="col-xl-7 col-lg-6">
-          <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
-            <img src="assets/img/about/about-4/about-img.svg" alt="À propos de moi - Ingénieur DevOps">
-          </div>
-        </div>
-
-      </div>
+<section id="parcours" class="sec alt">
+  <div class="wrap">
+    <div class="head rv"><small>Formation</small><h2>Éducation &amp; <em>diplômes</em></h2></div>
+    <div class="tl">
+      <article class="rv"><time>2025 – 2026</time><h3>Master 2 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
+      <article class="rv"><time>2024 – 2025</time><h3>Master 1 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
+      <article class="rv"><time>2021 – 2024</time><h3>Licence Professionnelle en Informatique</h3><p>E.N.I Fianarantsoa</p><span class="pill">Mention Bien</span></article>
+      <article class="rv"><time>2020 – 2021</time><h3>Baccalauréat Série C</h3><p>Lycée Joël Sylvain, Ambalavao</p><span class="pill">Mention Assez-Bien</span></article>
     </div>
-  </section>
-  <!-- ========================= about style-4 end ========================= -->
+  </div>
+</section>
 
-  <!-- ========================= SECTION FORMATION ACADÉMIQUE START ========================= -->
-  <section id="formation" class="timeline-section">
-    <div class="container">
-      <div class="text-center">
-        <span class="timeline-title-sub wow fadeInUp" data-wow-delay=".2s">Formation Académique</span>
-        <h2 class="timeline-title-main wow fadeInUp" data-wow-delay=".3s">Éducation &amp; <span>Diplômes</span></h2>
-      </div>
+<section id="projets" class="sec">
+  <div class="wrap">
+    <div class="head rv"><small>Réalisations</small><h2>Mes <em>projets</em></h2></div>
 
-      <div class="timeline-container">
-
-        <!-- Master 2 -->
-        <div class="timeline-item left wow fadeInUp" data-wow-delay=".3s">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">
-            <i class="lni lni-calendar"></i> 2025 – 2026
-          </div>
-          <h3 class="timeline-degree">Master 2 Professionnel en Informatique</h3>
-          <p class="timeline-school">E.N.I Fianarantsoa</p>
-        </div>
-
-        <!-- Master 1 -->
-        <div class="timeline-item right wow fadeInUp" data-wow-delay=".4s">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">
-            <i class="lni lni-calendar"></i> 2024 – 2025
-          </div>
-          <h3 class="timeline-degree">Master 1 Professionnel en Informatique</h3>
-          <p class="timeline-school">E.N.I Fianarantsoa</p>
-        </div>
-
-        <!-- Licence Professionnelle -->
-        <div class="timeline-item left wow fadeInUp" data-wow-delay=".5s">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">
-            <i class="lni lni-calendar"></i> 2021 – 2024
-          </div>
-          <h3 class="timeline-degree">Licence Professionnelle en Informatique</h3>
-          <p class="timeline-school">E.N.I Fianarantsoa</p>
-          <span class="timeline-badge">Mention Bien</span>
-        </div>
-
-        <!-- Baccalauréat -->
-        <div class="timeline-item right wow fadeInUp" data-wow-delay=".6s">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">
-            <i class="lni lni-calendar"></i> 2020 – 2021
-          </div>
-          <h3 class="timeline-degree">Baccalauréat Série C</h3>
-          <p class="timeline-school">Lycée Joël Sylvain, Ambalavao</p>
-          <span class="timeline-badge">Mention Assez-Bien</span>
-        </div>
-
-      </div>
+    <div class="row-title"><h3>Déployés en ligne</h3>
+      <div class="arrows"><button data-dir="-1" aria-label="Précédent">‹</button><button data-dir="1" aria-label="Suivant">›</button></div></div>
+    <div class="slider" id="slider">
+      <article class="card rv"><span class="pill live">● En ligne</span><h4>DockerOpt</h4><p>Visualisation et optimisation des ressources des applications Docker.</p><small>Prometheus · cAdvisor · React · Node.js · PostgreSQL</small><a class="btn btn-sm" href="https://docker-opt.duckdns.org" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a></article>
+      <article class="card rv"><span class="pill live">● En ligne</span><h4>EpiMad</h4><p>Suivi des exploitations agricoles, déployé avec Docker, Jenkins et HTTPS.</p><small>FastAPI · PostgreSQL / PostGIS · Nginx · Certbot</small><a class="btn btn-sm" href="https://epimad.ddns.net" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a></article>
+      <article class="card rv"><span class="pill live">● En ligne</span><h4>VonjyMed</h4><p>Plateforme médicale réunissant patients et médecins, avec dossiers de santé.</p><small>NestJS · Next.js · MinIO · PostgreSQL · Jenkins</small><a class="btn btn-sm" href="https://app-web-vonjy-med.duckdns.org" target="_blank" rel="noopener noreferrer">Voir le projet ↗</a></article>
     </div>
-  </section>
-  <!-- ========================= SECTION FORMATION ACADÉMIQUE END ========================= -->
 
-  <!-- ========================= Projets DevOps & Full Stack ========================= -->
-  <section id="projets" class="pricing-section pricing-style-4 bg-light">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <!-- Présentation -->
-        <div class="col-xl-5 col-lg-6">
-          <div class="section-title mb-60">
-            <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">
-              Mes projets &amp; réalisations
-            </h3>
-
-            <p class="wow fadeInUp" data-wow-delay=".4s">
-              Découvrez mes réalisations en ingénierie DevOps et en
-              développement Full Stack. Je conçois, déploie et optimise
-              des applications modernes en mettant l'accent sur
-              l'automatisation, la performance et la fiabilité.
-            </p>
-          </div>
-        </div>
-
-        <!-- Carrousel des projets -->
-        <div class="col-xl-7 col-lg-6">
-          <div class="pricing-active-wrapper wow fadeInUp" data-wow-delay=".4s">
-            <div class="pricing-active">
-
-              <!-- Projet 1 : DockerOpt -->
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Projet DevOps</h6>
-                  <h3>DockerOpt</h3>
-                  <ul>
-                    <li>Plateforme de supervision des conteneurs et des ressources</li>
-                    <li>Visualisation des métriques système</li>
-                  </ul>
-                  <a href="https://docker-opt.duckdns.org" target="_blank" rel="noopener noreferrer"
-                    class="button radius-30">
-                    Voir le projet
-                  </a>
-                </div>
-              </div>
-
-              <!-- Projet 2 : EpiMad -->
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Projet DevOps</h6>
-                  <h3>EpiMad</h3>
-                  <ul>
-                    <li>Plateforme de suivi et surveillance des données épidémiologiques</li>
-                    <li>Centralisation et visualisation des informations sanitaires</li>
-                  </ul>
-                  <a href="https://epimad.ddns.net" target="_blank" rel="noopener noreferrer" class="button radius-30">
-                    Voir le projet
-                  </a>
-                </div>
-              </div>
-
-              <!-- Projet 3 : VonjyMed -->
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Projet DevOps</h6>
-                  <h3>VonjyMed</h3>
-                  <ul>
-                    <li>Plateforme médicale et rendez-vous en ligne</li>
-                    <li>Déploiement et gestion des services en production</li>
-                  </ul>
-                  <a href="https://app-web-vonjy-med.duckdns.org" target="_blank" rel="noopener noreferrer"
-                    class="button radius-30">
-                    Voir le projet
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <div class="row-title"><h3>Code source sur GitHub</h3></div>
+    <div class="grid">
+      <!-- Remplacez chaque lien par l'adresse exacte du dépôt (https://github.com/Joel4268/NOM-DU-DEPOT) -->
+      <article class="card rv"><h4>Audit des retraits bancaires</h4><p>Supervision et analyse des opérations bancaires. ENI, 02/2026.</p><small>Django · Python · PostgreSQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">Voir sur GitHub ↗</a></article>
+      <article class="card rv"><h4>Plateforme de recrutement</h4><p>Recherche d'emploi et gestion des informations. Projet de fin d'étude M1.</p><small>React JS · Express JS · PostgreSQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">Voir sur GitHub ↗</a></article>
+      <article class="card rv"><h4>Gestion des salaires</h4><p>Application mobile de gestion salariale des professeurs. ENI, 2025.</p><small>Java · MySQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">Voir sur GitHub ↗</a></article>
+      <article class="card rv"><h4>Suivi d'emploi des étudiants</h4><p>Stage à la Faculté des Sciences de Fianarantsoa, 2023.</p><small>Flutter · Dart · Express JS · MySQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">Voir sur GitHub ↗</a></article>
+      <article class="card rv"><h4>Gestion des pavillons</h4><p>Stage à la Commune Urbaine d'Ambalavao, 2022.</p><small>Laravel · MySQL · JavaScript</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">Voir sur GitHub ↗</a></article>
     </div>
-  </section>
-  <!-- ========================= Projets DevOps & Full Stack end ========================= -->
+  </div>
+</section>
 
-  <!-- ========================= contact-style-3 start ========================= -->
-  <section id="contact" class="contact-section contact-style-3">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
-          <div class="section-title text-center mb-50">
-            <h3 class="mb-15">Contactez-moi</h3>
-            <p>Discutons de votre projet ou de vos besoins en développement web, mobile et DevOps. Satisfaction garantie
-              !</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-8">
-          <div class="contact-form-wrapper">
-            <!-- Zone d'affichage des messages de statut -->
-            <div id="form-status-message" class="mb-3" style="display: none;"></div>
+<section class="skills"><div class="wrap"><img src="assets/skills.svg" alt="Technologies maîtrisées"></div></section>
 
-            <form id="contact-form">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="text" id="name" name="name" class="form-input" placeholder="Nom" required>
-                    <i class="lni lni-user"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="email" id="email" name="email" class="form-input" placeholder="Adresse e-mail"
-                      required>
-                    <i class="lni lni-envelope"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="text" id="number" name="number" class="form-input" placeholder="Téléphone">
-                    <i class="lni lni-phone"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Sujet" required>
-                    <i class="lni lni-text-format"></i>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="single-input">
-                    <textarea name="message" id="message" class="form-input" placeholder="Votre message" rows="6"
-                      required></textarea>
-                    <i class="lni lni-comments-alt"></i>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-button">
-                    <button type="submit" id="submit-btn" class="button">
-                      <i class="lni lni-telegram-original"></i> Envoyer
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="left-wrapper">
-            <div class="row">
-              <div class="col-lg-12 col-md-6">
-                <div class="single-item">
-                  <div class="icon"><i class="lni lni-phone"></i></div>
-                  <div class="text">
-                    <p>+261 34 98 453 00</p>
-                    <p>+261 32 82 012 42</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-6">
-                <div class="single-item d-flex align-items-start">
-                  <div class="icon me-3">
-                    <i class="lni lni-envelope"></i>
-                  </div>
-                  <div class="text text-break">
-                    <p class="mb-1"><a href="mailto:niainajoelferdinand@gmail.com">niainajoelferdinand@gmail.com</a></p>
-                    <p class="mb-0"><a href="mailto:joelferdinand94.fr@gmail.com">joelferdinand94.fr@gmail.com</a></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-12 col-md-6">
-                <div class="single-item">
-                  <div class="icon"><i class="lni lni-map-marker"></i></div>
-                  <div class="text">
-                    <p>1070A3/3710BBT3 Ampitakely, Fianarantsoa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<section id="contact" class="sec alt">
+  <div class="wrap">
+    <div class="head rv"><small>Contact</small><h2>Discutons de votre <em>projet</em></h2></div>
+    <div class="contact">
+      <form id="form" class="rv" novalidate>
+        <div id="status" class="status" hidden></div>
+        <div class="f2"><input name="name" placeholder="Nom" required><input type="email" id="email" name="email" placeholder="Adresse e-mail" required></div>
+        <div class="f2"><input name="number" placeholder="Téléphone"><input name="subject" placeholder="Sujet" required></div>
+        <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+        <button class="btn" id="send" type="submit">Envoyer</button>
+      </form>
+      <ul class="info rv">
+        <li><b>Téléphone</b><a href="tel:+261349845300">+261 34 98 453 00</a><a href="tel:+261328201242">+261 32 82 012 42</a></li>
+        <li><b>E-mail</b><a href="mailto:niainajoelferdinand@gmail.com">niainajoelferdinand@gmail.com</a></li>
+        <li><b>Adresse</b><span>Fianarantsoa, Madagascar</span></li>
+        <li><b>Liens</b><a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/joël-ferdinand-nahandrisoaniaina-bb7b103a0/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://web.facebook.com/joel.ferdinand.nahandrisoaniaina" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      </ul>
     </div>
-  </section>
-  <section class="clients-logo-section pt-100 pb-100">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="client-logo wow fadeInUp" data-wow-delay=".2s">
-            <img src="assets/img/clients/logo.svg" alt="Compétences et Outils" class="w-100">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- CDN EmailJS & Script de validation/envoi -->
+  </div>
+</section>
+</main>
 
-  <!-- ========================= footer style-4 start ========================= -->
-  <footer class="footer footer-style-4">
-    <div class="container">
-      <div class="widget-wrapper">
-        <div class="row justify-content-between">
+<footer class="foot"><div class="wrap"><img src="assets/logo.svg" alt="Joël Ferdinand"><p>© 2026 NAHANDRISOANIAINA Joël Ferdinand. Tous droits réservés.</p><a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download>Télécharger mon CV</a></div></footer>
 
-          <!-- Colonne 1 : Logo & Réseaux Sociaux -->
-          <div class="col-xl-4 col-lg-4 col-md-6">
-            <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
-              <div class="logo">
-                <div class="logo">
-                  <a href="#home">
-                    <img src="assets/img/logo/logo.svg" alt="Logo Joël Ferdinand" style="height: 40px; width: auto;" />
-                  </a>
-                </div>
-              </div>
-              <p class="desc">Développeur Full-Stack & DevOps. Conception et mise en place de solutions web, mobiles et
-                d'infrastructures cloud performantes.</p>
-              <ul class="socials">
-                <li> <a href="https://web.facebook.com/joel.ferdinand.nahandrisoaniaina" target="_blank"> <i
-                      class="lni lni-facebook-filled"></i> </a> </li>
-                <li> <a href="https://www.linkedin.com/in/joël-ferdinand-nahandrisoaniaina-bb7b103a0/" target="_blank">
-                    <i class="lni lni-linkedin-original"></i> </a> </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Colonne 2 : Liens Rapides -->
-          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-            <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
-              <h6>Liens rapides</h6>
-              <ul class="links">
-                <li> <a href="#home">Accueil</a> </li>
-                <li> <a href="#about">À propos</a> </li>
-                <li> <a href="#formation">Formation</a> </li>
-                <li> <a href="#projets">Projets</a> </li>
-                <li> <a href="#contact">Contact</a> </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Colonne 3 : Services / Expertise -->
-          <div class="col-xl-4 col-lg-4 col-md-6">
-            <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
-              <h6>Expertise</h6>
-              <ul class="links">
-                <li><a href="#0">Développement Web & Mobile</a></li>
-                <li><a href="#0">Administration & DevOps</a></li>
-                <li><a href="#0">CI/CD & Automatisation</a></li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Copyright -->
-      <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
-        <p>&copy; 2026 NAHANDRISOANIAINA Joël Ferdinand. Tous droits réservés.</p>
-      </div>
-    </div>
-  </footer>
-  <!-- CDN EmailJS & Script de validation/envoi -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      // Clé publique déjà configurée
-      emailjs.init("gZlLcr5SoH6DT0ScF");
-    })();
-
-    document.getElementById('contact-form').addEventListener('submit', async function (event) {
-      event.preventDefault();
-
-      const statusDiv = document.getElementById('form-status-message');
-      const submitBtn = document.getElementById('submit-btn');
-      const emailInput = document.getElementById('email').value.trim();
-
-      // Réinitialisation du message
-      statusDiv.style.display = 'none';
-      statusDiv.className = 'alert';
-
-      // 1. Vérification de la syntaxe et des fautes de frappe de l'e-mail
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="lni lni-spinner lni-is-spinning"></i> Vérification...';
-
-      const isValidEmail = await verifyEmailExistence(emailInput);
-
-      if (!isValidEmail) {
-        statusDiv.className = 'alert alert-danger';
-        statusDiv.innerText = "L'adresse e-mail saisie est invalide ou le domaine n'existe pas. Veuillez vérifier votre saisie.";
-        statusDiv.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="lni lni-telegram-original"></i> Envoyer';
-        return;
-      }
-
-      // 2. Envoi du mail via EmailJS
-      submitBtn.innerHTML = '<i class="lni lni-spinner lni-is-spinning"></i> Envoi en cours...';
-
-      // ⚠️ Remplacez 'VOTRE_TEMPLATE_ID' par votre vrai Template ID
-      emailjs.sendForm('service_5kjugn9', 'template_ygwbnom', this)
-        .then(function () {
-          statusDiv.className = 'alert alert-success';
-          statusDiv.innerText = "Votre message a été envoyé avec succès !";
-          statusDiv.style.display = 'block';
-          document.getElementById('contact-form').reset();
-        }, function (error) {
-          console.error("Erreur EmailJS:", error);
-          statusDiv.className = 'alert alert-danger';
-          statusDiv.innerText = "Une erreur est survenue lors de l'envoi du message.";
-          statusDiv.style.display = 'block';
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="lni lni-telegram-original"></i> Envoyer';
-        });
-    });
-
-    // Fonction de vérification d'email
-    async function verifyEmailExistence(email) {
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailRegex.test(email)) return false;
-
-      const domain = email.split('@')[1].toLowerCase();
-
-      // Fautes de frappe courantes
-      const invalidDomains = ['gmai.com', 'gmil.com', 'yaho.com', 'hotmai.com', 'outlok.com'];
-      if (invalidDomains.includes(domain)) return false;
-
-      try {
-        const response = await fetch(`https://dns.google/resolve?name=${domain}&type=MX`);
-        const data = await response.json();
-
-        if (!data.Answer || data.Answer.length === 0) {
-          return false;
-        }
-        return true;
-      } catch (e) {
-        return true;
-      }
-    }
-  </script>
-  <!-- ========================= scroll-top start ========================= -->
-  <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
-
-  <!-- ========================= JS here ========================= -->
-  <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
-  <script src="assets/js/tiny-slider.js"></script>
-  <script src="assets/js/wow.min.js"></script>
-  <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>
