@@ -65,3 +65,6 @@ input::placeholder,textarea::placeholder{color:#7f8bb0}input:focus,textarea:focu
 .burger{display:block}.menu{position:absolute;top:72px;left:0;right:0;background:rgba(255,255,255,.97);box-shadow:var(--sh);flex-direction:column;padding:22px;gap:16px;display:none}.menu.open{display:flex}
 .tl:before,.tl:after{left:24px}.tl article,.tl article:nth-child(even){width:100%;margin:0;padding:0 0 44px 70px;text-align:left}.ic,.tl article:nth-child(even) .ic{left:0;right:auto}.tl article.rv,.tl article:nth-child(even).rv{transform:translateY(30px)}.tl article.in{transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.nav .wrap,.hero .wrap{width:100%;max-width:none;padding:0 clamp(20px,5vw,90px)}
+.hero-in{grid-template-columns:1.15fr .85fr}
