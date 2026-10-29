@@ -4,11 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Joël Ferdinand · Développeur Full Stack & DevOps</title>
+  <title>Joël Ferdinand · Développeur Full Stack &amp; DevOps</title>
   <meta name="description"
-    content="Portfolio de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack Web & Mobile et DevOps à Fianarantsoa, Madagascar.">
+    content="Portfolio de Joël Ferdinand Nahandrisoaniaina, développeur Full Stack Web &amp; Mobile et DevOps à Fianarantsoa, Madagascar.">
   <link rel="icon" href="assets/favicon.svg">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Material+Icons&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -16,11 +20,12 @@
   <header class="nav" id="nav">
     <div class="wrap nav-in">
       <a href="#accueil" class="brand"><img src="assets/logo.svg" alt="Joël Ferdinand"></a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="menu" id="menu">
         <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a
           href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
-        <a href="assets/cv/cv-Joel.pdf" download class="btn btn-sm">CV <i>↓</i></a>
+        <a href="assets/cv/cv-Joel.pdf" download class="btn btn-sm">CV <i class="mi">download</i></a>
       </nav>
     </div>
   </header>
@@ -36,11 +41,11 @@
           <p>Basé à Fianarantsoa, Madagascar, je conçois, conteneurise et déploie des applications web et mobile :
             React, Next.js, NestJS, FastAPI, Flutter, avec Docker, Jenkins et Prometheus.</p>
           <div class="actions">
-            <a href="assets/cv/cv-Joel.pdf" download class="btn">Télécharger mon CV <i>↓</i></a>
+            <a href="assets/cv/cv-Joel.pdf" download class="btn">Télécharger mon CV <i class="mi">download</i></a>
             <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
           </div>
           <div class="stats">
-            <div><b data-n="4">0</b><span>ans d\'expérience</span></div>
+            <div><b data-n="4">0</b><span>ans d'expérience</span></div>
             <div><b data-n="8">0</b><span>projets réalisés</span></div>
             <div><b data-n="3">0</b><span>déployés en ligne</span></div>
           </div>
@@ -77,7 +82,7 @@
             <dt>Langues</dt>
             <dd>Français, Anglais</dd>
           </dl>
-          <a href="assets/cv/cv-Joel.pdf" download class="btn">Télécharger le CV (PDF) <i>↓</i></a>
+          <a href="assets/cv/cv-Joel.pdf" download class="btn">Télécharger le CV (PDF) <i class="mi">download</i></a>
         </aside>
       </div>
     </section>
@@ -87,28 +92,7 @@
         <div class="head rv"><small>Mon parcours</small>
           <h2>Études &amp; <em>expérience</em></h2>
         </div>
-        <div class="tl" id="tl">
-          <article class="rv"><span class="ic">🚀</span><time>04/2026 – 09/2026</time>
-            <h3>Développeur DevOps · DockerOpt</h3>
-            <p>ITDC MADA · Prometheus, cAdvisor, Docker, Jenkins</p><span class="pill">Expérience pro</span>
-          </article>
-          <article class="rv"><span class="ic">🎓</span><time>2025 – 2026</time>
-            <h3>Master 2 Professionnel en Informatique</h3>
-            <p>E.N.I Fianarantsoa</p>
-          </article>
-          <article class="rv"><span class="ic">💻</span><time>2024 – 2025</time>
-            <h3>Master 1 Professionnel en Informatique</h3>
-            <p>E.N.I Fianarantsoa</p>
-          </article>
-          <article class="rv"><span class="ic">📘</span><time>2021 – 2024</time>
-            <h3>Licence Professionnelle en Informatique</h3>
-            <p>E.N.I Fianarantsoa</p><span class="pill">Mention Bien</span>
-          </article>
-          <article class="rv"><span class="ic">🏫</span><time>2020 – 2021</time>
-            <h3>Baccalauréat Série C</h3>
-            <p>Lycée Joël Sylvain, Ambalavao</p><span class="pill">Mention Assez-Bien</span>
-          </article>
-        </div>
+        <div class="tl" id="tl"></div>
       </div>
     </section>
 
@@ -117,69 +101,16 @@
         <div class="head rv"><small>Réalisations</small>
           <h2>Mes <em>projets</em></h2>
         </div>
-
         <div class="row-title">
           <h3>Déployés en ligne</h3>
           <div class="arrows"><button data-dir="-1" aria-label="Précédent">‹</button><button data-dir="1"
               aria-label="Suivant">›</button></div>
         </div>
-        <div class="slider" id="slider">
-          <article class="card rv"><span class="pill live">● En ligne</span>
-            <h4>DockerOpt</h4>
-            <p>Visualisation et optimisation des ressources des applications Docker.</p><small>Prometheus · cAdvisor ·
-              React · Node.js · PostgreSQL</small><a class="btn btn-sm" href="https://docker-opt.duckdns.org"
-              target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
-          </article>
-          <article class="card rv"><span class="pill live">● En ligne</span>
-            <h4>EpiMad</h4>
-            <p>Suivi d'epidemologie, déployé avec Docker, Jenkins et HTTPS.</p><small>FastAPI · PostgreSQL / PostGIS ·
-              Nginx · Certbot</small><a class="btn btn-sm" href="https://epimad.ddns.net" target="_blank"
-              rel="noopener noreferrer">Voir le projet ↗</a>
-          </article>
-          <article class="card rv"><span class="pill live">● En ligne</span>
-            <h4>VonjyMed</h4>
-            <p>Plateforme médicale réunissant patients et médecins, avec dossiers de santé.</p><small>NestJS · Next.js ·
-              MinIO · PostgreSQL · Jenkins</small><a class="btn btn-sm" href="https://app-web-vonjy-med.duckdns.org"
-              target="_blank" rel="noopener noreferrer">Voir le projet ↗</a>
-          </article>
-        </div>
-
+        <div class="slider" id="slider"></div>
         <div class="row-title">
           <h3>Code source sur GitHub</h3>
         </div>
-        <div class="grid">
-          <!-- Remplacez chaque lien par l'adresse exacte du dépôt (https://github.com/Joel4268/NOM-DU-DEPOT) -->
-          <article class="card rv">
-            <h4>Audit des retraits bancaires</h4>
-            <p>Supervision et analyse des opérations bancaires. ENI, 02/2026.</p><small>Django · Python ·
-              PostgreSQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank"
-              rel="noopener noreferrer">Voir sur GitHub ↗</a>
-          </article>
-          <article class="card rv">
-            <h4>Plateforme de recrutement</h4>
-            <p>Recherche d'emploi et gestion des informations. Projet de fin d'étude M1.</p><small>React JS · Express JS
-              · PostgreSQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank"
-              rel="noopener noreferrer">Voir sur GitHub ↗</a>
-          </article>
-          <article class="card rv">
-            <h4>Gestion des salaires</h4>
-            <p>Application mobile de gestion salariale des professeurs. ENI, 2025.</p><small>Java · MySQL</small><a
-              class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank"
-              rel="noopener noreferrer">Voir sur GitHub ↗</a>
-          </article>
-          <article class="card rv">
-            <h4>Suivi d'emploi des étudiants</h4>
-            <p>Stage à la Faculté des Sciences de Fianarantsoa, 2023.</p><small>Flutter · Dart · Express JS ·
-              MySQL</small><a class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank"
-              rel="noopener noreferrer">Voir sur GitHub ↗</a>
-          </article>
-          <article class="card rv">
-            <h4>Gestion des pavillons</h4>
-            <p>Stage à la Commune Urbaine d'Ambalavao, 2022.</p><small>Laravel · MySQL · JavaScript</small><a
-              class="btn btn-sm btn-ghost" href="https://github.com/Joel4268" target="_blank"
-              rel="noopener noreferrer">Voir sur GitHub ↗</a>
-          </article>
-        </div>
+        <div class="grid" id="repos"></div>
       </div>
     </section>
 
@@ -213,7 +144,7 @@
             <li><b>E-mail</b><a href="mailto:niainajoelferdinand@gmail.com">niainajoelferdinand@gmail.com</a></li>
             <li><b>Adresse</b><span>Fianarantsoa, Madagascar</span></li>
             <li><b>Liens</b><a href="https://github.com/Joel4268" target="_blank" rel="noopener noreferrer">GitHub</a><a
-                href="https://www.linkedin.com/in/joël-ferdinand-nahandrisoaniaina-bb7b103a0/" target="_blank"
+                href="https://www.linkedin.com/in/jo%C3%ABl-ferdinand-nahandrisoaniaina-bb7b103a0/" target="_blank"
                 rel="noopener noreferrer">LinkedIn</a><a
                 href="https://web.facebook.com/joel.ferdinand.nahandrisoaniaina" target="_blank"
                 rel="noopener noreferrer">Facebook</a></li>
@@ -225,8 +156,8 @@
 
   <footer class="foot">
     <div class="wrap"><img src="assets/logo.svg" alt="Joël Ferdinand">
-      <p>© 2026 NAHANDRISOANIAINA Joël Ferdinand. Tous droits réservés.</p><a href="assets/cv/CV-Joel-Ferdinand-FR.pdf"
-        download>Télécharger mon CV</a>
+      <p>© 2026 NAHANDRISOANIAINA Joël Ferdinand. Tous droits réservés.</p>
+      <a href="assets/cv/cv-Joel.pdf" download>Télécharger mon CV</a>
     </div>
   </footer>
 
