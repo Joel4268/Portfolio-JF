@@ -15,33 +15,26 @@
     <a href="#accueil" class="brand"><img src="assets/logo.svg" alt="Joël Ferdinand"></a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     <nav class="menu" id="menu">
-      <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#contact">Contact</a>
+      <a href="#accueil">Accueil</a><a href="#apropos">À propos</a><a href="#parcours">Parcours</a><a href="#projets">Projets</a><a href="#competences">Compétences</a><a href="#contact">Contact</a>
       <a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download class="btn btn-sm">CV <i>↓</i></a>
     </nav>
   </div>
 </header>
 
 <main>
-<section id="accueil" class="hero">
+<section id="accueil" class="hero"><div class="blob b1"></div><div class="blob b2"></div><div class="grid-bg"></div>
   <div class="wrap hero-in">
     <div class="rv">
       <span class="tag">● Disponible immédiatement</span>
-      <h1>Développeur Full Stack &amp; <em>DevOps</em></h1>
+      <h1>Développeur <em>Full Stack</em><br>&amp; <em class="ty" id="ty">DevOps</em><i class="cur"></i></h1>
       <p>Basé à Fianarantsoa, Madagascar, je conçois, conteneurise et déploie des applications web et mobile : React, Next.js, NestJS, FastAPI, Flutter, avec Docker, Jenkins et Prometheus.</p>
       <div class="actions">
         <a href="assets/cv/CV-Joel-Ferdinand-FR.pdf" download class="btn">Télécharger mon CV <i>↓</i></a>
         <a href="#projets" class="btn btn-ghost">Voir mes projets</a>
       </div>
+      <div class="stats"><div><b data-n="4">0</b><span>ans d\'expérience</span></div><div><b data-n="8">0</b><span>projets réalisés</span></div><div><b data-n="3">0</b><span>déployés en ligne</span></div></div>
     </div>
-    <div class="term rv" aria-hidden="true">
-      <div class="term-bar"><b></b><b></b><b></b><span>pipeline.jenkins</span></div>
-      <pre><span class="c"># build &amp; déploiement</span>
-<span class="g">✔</span> git push origin main
-<span class="g">✔</span> docker build -t app .
-<span class="g">✔</span> tests : 42 passés
-<span class="g">✔</span> nginx + certbot (HTTPS)
-<span class="b">→</span> production : <span class="g">en ligne</span><i class="cur"></i></pre>
-    </div>
+    <div class="stage rv" id="stage"><div class="glow"></div><img class="art" src="assets/hero.svg" alt="Illustration développeur"><div class="ring" id="ring"></div></div>
   </div>
 </section>
 
@@ -68,12 +61,13 @@
 
 <section id="parcours" class="sec alt">
   <div class="wrap">
-    <div class="head rv"><small>Formation</small><h2>Éducation &amp; <em>diplômes</em></h2></div>
-    <div class="tl">
-      <article class="rv"><time>2025 – 2026</time><h3>Master 2 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
-      <article class="rv"><time>2024 – 2025</time><h3>Master 1 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
-      <article class="rv"><time>2021 – 2024</time><h3>Licence Professionnelle en Informatique</h3><p>E.N.I Fianarantsoa</p><span class="pill">Mention Bien</span></article>
-      <article class="rv"><time>2020 – 2021</time><h3>Baccalauréat Série C</h3><p>Lycée Joël Sylvain, Ambalavao</p><span class="pill">Mention Assez-Bien</span></article>
+    <div class="head rv"><small>Mon parcours</small><h2>Études &amp; <em>expérience</em></h2></div>
+    <div class="tl" id="tl">
+      <article class="rv"><span class="ic">🚀</span><time>04/2026 – 09/2026</time><h3>Développeur DevOps · DockerOpt</h3><p>ITDC MADA · Prometheus, cAdvisor, Docker, Jenkins</p><span class="pill">Expérience pro</span></article>
+      <article class="rv"><span class="ic">🎓</span><time>2025 – 2026</time><h3>Master 2 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
+      <article class="rv"><span class="ic">💻</span><time>2024 – 2025</time><h3>Master 1 Professionnel en Informatique</h3><p>E.N.I Fianarantsoa</p></article>
+      <article class="rv"><span class="ic">📘</span><time>2021 – 2024</time><h3>Licence Professionnelle en Informatique</h3><p>E.N.I Fianarantsoa</p><span class="pill">Mention Bien</span></article>
+      <article class="rv"><span class="ic">🏫</span><time>2020 – 2021</time><h3>Baccalauréat Série C</h3><p>Lycée Joël Sylvain, Ambalavao</p><span class="pill">Mention Assez-Bien</span></article>
     </div>
   </div>
 </section>
@@ -102,7 +96,7 @@
   </div>
 </section>
 
-<section class="skills"><div class="wrap"><img src="assets/skills.svg" alt="Technologies maîtrisées"></div></section>
+<section id="competences" class="sec skills"><div class="wrap"><div class="head rv"><small>Compétences</small><h2>Technologies &amp; <em>outils</em></h2></div></div><div class="mq" id="mq"></div></section>
 
 <section id="contact" class="sec alt">
   <div class="wrap">
