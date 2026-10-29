@@ -1,7 +1,7 @@
 (function () {
   var $ = function (s) { return document.querySelector(s); }, $$ = function (s) { return [].slice.call(document.querySelectorAll(s)); };
   var D = 'https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/', GH = 'https://github.com/Joel4268';
-  var TL = [['rocket_launch', '04/2026 – 09/2026', 'Développeur DevOps & Full Stack · ITDC MADA', 'DockerOpt, EpiMad et VonjyMed : Docker, Jenkins, Prometheus', 'Expérience pro'],
+  var TL = [['rocket_launch', '04/2026 – 09/2026', 'Développeur DevOps && Développeur Full stack chez ITDC MADA', 'DockerOpt, EpiMad et VonjyMed : Docker, Jenkins, Prometheus', 'Expérience pro'],
     ['school', '2025 – 2026', 'Master 2 Professionnel en Informatique', 'E.N.I Fianarantsoa'], ['laptop_mac', '2024 – 2025', 'Master 1 Professionnel en Informatique', 'E.N.I Fianarantsoa'],
     ['menu_book', '2021 – 2024', 'Licence Professionnelle en Informatique', 'E.N.I Fianarantsoa', 'Mention Bien'], ['account_balance', '2020 – 2021', 'Baccalauréat Série C', 'Lycée Joël Sylvain, Ambalavao', 'Mention Assez-Bien']];
   var EXP = [['DockerOpt', 'Visualisation et optimisation des ressources des applications Docker.', 'Prometheus · cAdvisor · React · Node.js · PostgreSQL', 'https://docker-opt.duckdns.org'],
