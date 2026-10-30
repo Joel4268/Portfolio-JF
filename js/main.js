@@ -6,13 +6,13 @@
     ['menu_book', '2021 – 2024', 'Licence Professionnelle en Informatique', 'E.N.I Fianarantsoa', 'Mention Bien'], ['account_balance', '2020 – 2021', 'Baccalauréat Série C', 'Lycée Joël Sylvain, Ambalavao', 'Mention Assez-Bien']];
   var EXP = [['DockerOpt', 'Visualisation et optimisation des ressources des applications Docker.', 'Prometheus · cAdvisor · React · Node.js · PostgreSQL', 'https://docker-opt.duckdns.org'],
     ['EpiMad', 'Plateforme de suivi épidémiologique à Madagascar, déployée avec Docker, Jenkins et HTTPS.', 'FastAPI · PostgreSQL / PostGIS · Jenkins · Nginx · Certbot', 'https://epimad.ddns.net'],
-    ['VonjyMed', 'Plateforme médicale réunissant patients et médecins, avec dossiers de santé.', 'NestJS · Next.js · MinIO · PostgreSQL · Jenkins', 'https://app-web-vonjy-med.duckdns.org']],
-    [
+    ['VonjyMed', 'Plateforme médicale réunissant patients et médecins, avec dossiers de santé.', 'NestJS · Next.js · MinIO · PostgreSQL · Jenkins', 'https://app-web-vonjy-med.duckdns.org'],
+  [
     'WebMap Madagascar',
     'Plateforme de recherche et de géolocalisation des établissements de santé à Madagascar grâce à une carte interactive.',
     'React · NestJS · PostgreSQL · PostGIS',
     'https://web-map.duckdns.org'
-  ];
+  ]];
   // Remplacez GH par l'adresse exacte de chaque dépôt : GH + '/NOM-DU-DEPOT'
   var REPOS = [['Audit des retraits bancaires', 'Supervision et analyse des opérations bancaires. ENI, 02/2026.', 'Django · Python · PostgreSQL'], ['Plateforme de recrutement', 'Recherche d\'emploi et gestion des informations. Projet de fin d\'étude M1.', 'React JS · Express JS · PostgreSQL'],
     ['Gestion des salaires', 'Application mobile de gestion salariale des professeurs. ENI, 2025.', 'Java · MySQL'], ['Suivi d\'emploi des étudiants', 'Stage à la Faculté des Sciences de Fianarantsoa, 2023.', 'Flutter · Dart · Express JS · MySQL'], ['Gestion des pavillons', 'Stage à la Commune Urbaine d\'Ambalavao, 2022.', 'Laravel · MySQL · JavaScript']];
