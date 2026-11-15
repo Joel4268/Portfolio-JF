@@ -10,7 +10,7 @@
   [
     'WebMap Madagascar',
     'Plateforme de recherche et de géolocalisation des établissements de santé à Madagascar grâce à une carte interactive.',
-    'React · NestJS · PostgreSQL · PostGIS','Git/GitHub','Jenkins','Docker','Nginx'
+    'React · NestJS · PostgreSQL · PostGIS','Git/GitHub','Jenkins','Docker','Nginx',
     'https://web-map.duckdns.org'
   ]];
   // Remplacez GH par l'adresse exacte de chaque dépôt : GH + '/NOM-DU-DEPOT'
